@@ -30,7 +30,7 @@
 	min-width: 50%;
 	min-height: 50;
 }*/
-.bg{
+#bg{
 	width: 1024px;
 	height: 1024px;
 	background-image: url(image/bg2.png);
