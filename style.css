@@ -1,6 +1,6 @@
 #bg{
 	background-image: url(image/bg5.jpg);
-	background-size: cover;
+	background-size: 100% 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
