@@ -4,7 +4,7 @@
 :-ms-input-placeholder { color: #ccc; text-transform: uppercase; }*/
 
 
-#bg {
+/*#bg {
 	position: fixed;
 	top: -50%;
 	left: -50%;
@@ -21,7 +21,7 @@
 	margin: auto;
 	min-width: 50%;
 	min-height: 50%;
-}
+}*/
 /*form {
   position: relative;
   width: 250px;
@@ -52,5 +52,13 @@ form input {
   margin-bottom: 19px;
 }
 
-form input:focus { background-color: rgba(0,0,0,.4); }
+form input:focus { background-color: rgba(0,0,0,.4); 
+i
 */
+bg {
+        background: url(images/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
