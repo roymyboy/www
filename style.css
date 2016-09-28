@@ -18,6 +18,8 @@
 
 form {
   position: fixed;
+  top: 50%;
+  top: 50%;
   width: 240px;
   margin: 0 auto;
   background: rgba(130,130,130,.3);
