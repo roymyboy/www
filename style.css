@@ -17,7 +17,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 
 form {
-  position: static;
+  position: fixed;
   width: 240px;
   margin: 0 auto;
   background: rgba(130,130,130,.3);
