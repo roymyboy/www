@@ -12,7 +12,7 @@
 
 }
 
-#bg {
+/*#bg {
 	position: fixed;
 	top: -50%;
 	left: -50%;
@@ -29,5 +29,9 @@
 	margin: auto;
 	min-width: 50%;
 	min-height: 50%;
+}*/
+bg img {
+	background: url(image/bg4.png);
+	background-size: 80px 60px;
+	background-repeat: no-repeat;
 }
-
