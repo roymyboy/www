@@ -54,7 +54,7 @@ form input:focus { background-color: rgba(0,0,0,.4); }
 form button[type=submit] {
   width: 118px;
   margin-bottom: 0;
-  color: #a18d6c;
+  color: #3f898a;
   letter-spacing: .05em;
   text-shadow: 0 1px 0 #133d3e;
   text-transform: uppercase;
@@ -69,7 +69,7 @@ form button[type=submit] {
 form button[type=Register] {
   width: 118px;
   margin-bottom: 0;
-  color: #a18d6c;
+  color: #3f898a;
   letter-spacing: .05em;
   text-shadow: 0 1px 0 #133d3e;
   text-transform: uppercase;
