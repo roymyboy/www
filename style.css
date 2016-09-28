@@ -21,9 +21,6 @@
 	left: -50%;
 	width: 200%;
 	height: 200%;
-	background: url(image/bg2.png) no-repeat center fixed;
-	background-size: cover;
-	-webkit-filter:blur(5px);
 }
 
 #bg img {
