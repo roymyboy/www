@@ -12,13 +12,13 @@
 
 }
 
-#bg {
+/*#bg {
 	position: fixed;
 	top: -50%;
 	left: -50%;
 	width: 200%;
 	height: 200%;
-}
+}*/
 
 #bg img {
 	position: absolute;
