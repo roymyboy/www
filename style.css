@@ -2,7 +2,8 @@
 bg img {
         background: url(image/bg5.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
+	background-size: cover;
         -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: 100% 100%;
+        position: relative;
+        min-height: 600px;
 }
