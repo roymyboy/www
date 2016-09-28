@@ -48,13 +48,8 @@ form input, form button {
 
 form input:focus { background-color: rgba(0,0,0,.4); }
 
-
-/*::-webkit-input-placeholder { color: #ccc; text-transform: uppercase; }
-::-moz-placeholder { color: #ccc; text-transform: uppercase; }
-:-ms-input-placeholder { color: #ccc; text-transform: uppercase; }*/
-
 form button[type=submit] {
-  width: 124px;
+  width: 120px;
   margin-bottom: 0;
   color: #a18d6c;
   letter-spacing: .05em;
@@ -69,7 +64,7 @@ form button[type=submit] {
 }
 
 form button[type=Register] {
-  width: 124px;
+  width: 120px;
   margin-bottom: 0;
   color: #a18d6c;
   letter-spacing: .05em;
