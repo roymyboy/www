@@ -14,13 +14,11 @@
 }
 
 
-
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 
 form {
   position: relative;
-  width: 250px;
+  width: 500px;
   margin: 0 auto;
   background: rgba(130,130,130,.3);
   padding: 20px 22px;
@@ -56,7 +54,7 @@ form input:focus { background-color: rgba(0,0,0,.4); }
 :-ms-input-placeholder { color: #ccc; text-transform: uppercase; }
 
 form button[type=submit] {
-  width: 248px;
+  width: 200px;
   margin-bottom: 0;
   color: #3f898a;
   letter-spacing: .05em;
