@@ -1,4 +1,7 @@
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+::-webkit-input-placeholder { color: #ccc; text-transform: uppercase; }
+::-moz-placeholder { color: #ccc; text-transform: uppercase; }
+:-ms-input-placeholder { color: #ccc; text-transform: uppercase; }
 
 
 #loginform{
@@ -46,7 +49,7 @@ form {
   border-right-color: rgba(60,60,60,.4);
 }
 
-form input, form button {
+form input {
   width: 212px;
   border: 1px solid;
   border-bottom-color: rgba(255,255,255,.5);
