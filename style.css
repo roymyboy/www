@@ -1,9 +1,11 @@
-
-#bg img{
-        background: url(image/bg5.jpg) no-repeat center 0px;
-        -webkit-background-size: cover;
-	background-size: cover;
-        -moz-background-size: cover;
-        min-height: 100%;
-	max-width: 100%;
+#bg-stat {
+background: url('images/LANDING_PAGE.jpg') no-repeat center center fixed;
+height: 100%;
+background-size: 100% 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-position: center;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/LANDING_PAGE.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/LANDING_PAGE.jpg', sizingMethod='scale')";
 }
