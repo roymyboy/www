@@ -49,7 +49,7 @@ form input, form button {
 form input:focus { background-color: rgba(0,0,0,.4); }
 
 form button[type=submit] {
-  width: 118.5px;
+  width: 118px;
   margin-bottom: 0;
   color: #a18d6c;
   letter-spacing: .05em;
@@ -64,7 +64,7 @@ form button[type=submit] {
 }
 
 form button[type=Register] {
-  width: 118.5px;
+  width: 118px;
   margin-bottom: 0;
   color: #a18d6c;
   letter-spacing: .05em;
