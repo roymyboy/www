@@ -30,9 +30,4 @@
 	min-width: 50%;
 	min-height: 50;
 }*/
-#bg img{
-	background-image: url(image/bg2.png);
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-}
+
