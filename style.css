@@ -1,7 +1,7 @@
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 ::-webkit-input-placeholder { color: #ccc; text-transform: uppercase; }
 ::-moz-placeholder { color: #ccc; text-transform: uppercase; }
-:-ms-input-placeholder { color: #ccc; text-transform: uppercase; }
+:-ms-input-placeholder { color: #ccc; text-transform: uppercase; }*/
 
 
 #bg {
@@ -22,7 +22,7 @@
 	min-width: 50%;
 	min-height: 50%;
 }
-form {
+/*form {
   position: relative;
   width: 250px;
   margin: 0 auto;
