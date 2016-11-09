@@ -1,4 +1,5 @@
 <?php 
+	include_once("index.html"); 
 	ob_start();
  	session_start();
  	require_once 'connectDatabase.php';
@@ -57,6 +58,6 @@
 	 }
 
 
-	include_once("index.html"); 
+//	include_once("index.html"); 
 
 ?>
