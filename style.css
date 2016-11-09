@@ -79,7 +79,7 @@ form button[type=submit] {
 form button[type=Register] {
   width: 118px;
   margin-bottom: 0;
-  color: #3f898a;
+  color: #fff;
   letter-spacing: .05em;
   text-shadow: 0 1px 0 #133d3e;
   text-transform: uppercase;
