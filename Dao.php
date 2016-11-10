@@ -6,7 +6,7 @@
 		private $pwd  = "3abc0052";
 	
 		public function getConnection(){
-		     return new PDO("mysql:host={$this->host};dbname={$this->db}";$user; 					$pwd;);
+		     return new PDO("mysql:host=$host;dbname=$db";$user; 					$pwd;);
 		}	
 	
 	}
