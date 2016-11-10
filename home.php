@@ -1,7 +1,6 @@
 <?php
- ob_start();
  session_start();
- require_once 'dbconnect.php';
+ require_once 'Dao.php';
  
  // if session is not set this will redirect to login page
  if( !isset($_SESSION['user']) ) {
