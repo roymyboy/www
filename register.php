@@ -7,6 +7,7 @@
 </head>
 <div class="text-center" style="padding:50px 0">
         <div class="logo">Register</div>
+<body>
 <?php
 require('Dao.php');
 // If form submitted, insert values into the database.
@@ -77,7 +78,7 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
         <!-- end:Main Form -->
 <?php } ?>
 </div>
-
+</body>
 </html>
                                                                                        61,7          Bot
 
