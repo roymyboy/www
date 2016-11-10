@@ -7,8 +7,6 @@
 </head>
 <div class="text-center" style="padding:50px 0">
         <div class="logo">Register</div>
-
-<body>
 <?php
 require('Dao.php');
 // If form submitted, insert values into the database.
@@ -50,7 +48,6 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
                                                 <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
                                                 <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
                                         </div>
-
                                         <div class="form-group">
                                                 <label for="reg_email" class="sr-only">Email</label>
                                                 <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
@@ -59,15 +56,12 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
                                                 <label for="reg_fullname" class="sr-only">Full Name</label>
                                                 <input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
                                         </div>
-
                                <div class="form-group login-group-checkbox">
                                                 <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
                                                 <label for="male">male</label>
-
                                                 <input type="radio" class="" name="reg_gender" id="female" placeholder="username">
                                                 <label for="female">female</label>
                                         </div>
-
                                         <div class="form-group login-group-checkbox">
                                                 <input type="checkbox" class="" id="reg_agree" name="reg_agree">
                                                 <label for="reg_agree">i agree with <a href="terms.html">terms</a></label>
