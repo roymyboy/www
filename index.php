@@ -1,7 +1,7 @@
 <?php
  
 //login.php
-require 'index.html';
+//require 'index.html';
 /**
  * Start the session.
  */
@@ -17,6 +17,7 @@ require 'password.php';
  */
 require 'Dao.php';
  
+require 'index.html';
  
 //If the POST var "login" exists (our submit button), then we can
 //assume that the user has submitted the login form.
