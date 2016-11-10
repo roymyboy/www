@@ -73,7 +73,7 @@ form input.pass {
 
 
 form button[type=submit] {
-  width: 118px;
+  width: 248px;
   margin-bottom: 0;
   color: #fff;
   letter-spacing: .05em;
@@ -87,17 +87,3 @@ form button[type=submit] {
   cursor: pointer;
 }
 
-form button[type=Register] {
-  width: 118px;
-  margin-bottom: 0;
-  color: #fff;
-  letter-spacing: .05em;
-  text-shadow: 0 1px 0 #133d3e;
-  text-transform: uppercase;
-  background: #225556;
-  border-top-color: #9fb5b5;
-  border-left-color: #608586;
-  border-bottom-color: #1b4849;
-  border-right-color: #1e4d4e;
-  cursor: pointer;
-}
