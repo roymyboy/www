@@ -17,7 +17,7 @@ require 'password.php';
  */
 require 'Dao.php';
  
-require 'index.html';
+//require 'index.html';
  
 //If the POST var "login" exists (our submit button), then we can
 //assume that the user has submitted the login form.
@@ -77,6 +77,7 @@ if(isset($_POST['login'])){
 
 
         <head>
+		<meta charset="UTF-8">
                 <link rel = "stylesheet" type="text/css" href="style.css">
                 <link rel = "icon" type ="image/png" href= "image/favicon.png">
         </head>
