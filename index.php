@@ -1,7 +1,7 @@
 <?php
  
 //login.php
- require 'index.html';
+// require 'index.html';
 /**
  * Start the session.
  */
@@ -71,3 +71,45 @@ if(isset($_POST['login'])){
 }
  
 ?>
+<!DOCTYPE html>
+<html>
+
+
+        <head>
+                <link rel = "stylesheet" type="text/css" href="style.css">
+                <link rel = "icon" type ="image/png" href= "image/favicon.png">
+        </head>
+
+        <!--back ground image-->
+        <div id = "bg">
+         <img src= "image/bg3.jpg" class="stretch" alt = ""/>
+        </div>
+
+        <!--Login setup-->
+         <script src="js/prefixfree.min.js"></script>
+        <form action="index.php" method="post">
+          <label for=""></label>
+          <input type="text" name="" id="" placeholder="username@email.com" class="email" required>
+          <label for=""></label>
+          <input type="password" name="" id="" placeholder="password" class="pass" required>
+          <button type="submit">login</button>
+          <div class="etc-login-form">
+                <p>forgot your password? <a href="forgotpw.html">click here</a></p>
+                <p>new user? <a href="register.html">create new account</a></p>
+        </div>
+        </form>
+
+         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</html>
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+~                                                                                                                                                                            
+                                                                                                                                                           18,4-11       All
+
