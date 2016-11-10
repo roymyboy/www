@@ -10,12 +10,12 @@ session_start();
 /**
  * Include ircmaxell's password_compat library.
  */
-require 'lib/password.php';
+require 'password.php';
  
 /**
  * Include our MySQL connection.
  */
-require 'connect.php';
+require 'Dao.php';
  
  
 //If the POST var "login" exists (our submit button), then we can
