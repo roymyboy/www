@@ -1,7 +1,7 @@
 <?php
  
 //login.php
-// require 'index.html';
+require 'index.html';
 /**
  * Start the session.
  */
