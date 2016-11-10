@@ -1,19 +1,20 @@
 <?php
+ include_once'register.html';
  ob_start();
  session_start();
  if( isset($_SESSION['user'])!="" ){
   header("Location: home.php");
  }
- include_once 'connectDatabase.php';
+ include_once 'Dao.php';
 
  $error = false;
 
  if ( isset($_POST['btn-signup']) ) {
   
   // clean user inputs to prevent sql injections
-  $name = trim($_POST['name']);
-  $name = strip_tags($name);
-  $name = htmlspecialchars($name);
+  $username = trim($_POST['name']);
+  $username = strip_tags($username);
+  $username = htmlspecialchars($username);
   
   $email = trim($_POST['email']);
   $email = strip_tags($email);
@@ -24,13 +25,13 @@
   $pass = htmlspecialchars($pass);
   
   // basic name validation
-  if (empty($name)) {
+  if (empty($username)) {
    $error = true;
    $nameError = "Please enter your full name.";
-  } else if (strlen($name) < 3) {
+  } else if (strlen($username) < 3) {
    $error = true;
    $nameError = "Name must have atleat 3 characters.";
-  } else if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
+  } else if (!preg_match("/^[a-zA-Z ]+$/",$username)) {
    $error = true;
    $nameError = "Name must contain alphabets and space.";
   }
@@ -64,13 +65,13 @@
   // if there's no error, continue to signup
   if( !$error ) {
    
-   $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
+   $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$username','$email','$password')";
    $res = mysql_query($query);
     
    if ($res) {
     $errTyp = "success";
     $errMSG = "Successfully registered, you may login now";
-    unset($name);
+    unset($username);
     unset($email);
     unset($pass);
    } else {
