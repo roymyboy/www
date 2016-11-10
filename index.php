@@ -101,15 +101,3 @@ if(isset($_POST['login'])){
 
          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </html>
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-~                                                                                                                                                                            
-                                                                                                                                                           18,4-11       All
-
