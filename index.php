@@ -25,4 +25,5 @@ and password='".md5($password)."'";
 <br/>Click here to <a href='login.php'>Login</a></div>";
         echo "<p>Not registered yet? <a href='registration.html'>Register Here</a></p>";
 	}
+}
 ?>
