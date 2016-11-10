@@ -1,86 +1,80 @@
 <?php
- include_once'register.html';
- ob_start();
- session_start();
- if( isset($_SESSION['user'])!="" ){
-  header("Location: home.php");
- }
- include_once 'Dao.php';
 
- $error = false;
+//register.php
+  require 'register.html';
+/**
+ * start the session.
+ */
+session_start();
 
- if ( isset($_POST['btn-signup']) ) {
-  
-  // clean user inputs to prevent sql injections
-  $username = trim($_POST['name']);
-  $username = strip_tags($username);
-  $username = htmlspecialchars($username);
-  
-  $email = trim($_POST['email']);
-  $email = strip_tags($email);
-  $email = htmlspecialchars($email);
-  
-  $pass = trim($_POST['pass']);
-  $pass = strip_tags($pass);
-  $pass = htmlspecialchars($pass);
-  
-  // basic name validation
-  if (empty($username)) {
-   $error = true;
-   $nameError = "Please enter your full name.";
-  } else if (strlen($username) < 3) {
-   $error = true;
-   $nameError = "Name must have atleat 3 characters.";
-  } else if (!preg_match("/^[a-zA-Z ]+$/",$username)) {
-   $error = true;
-   $nameError = "Name must contain alphabets and space.";
-  }
-  
-  //basic email validation
-  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-   $error = true;
-   $emailError = "Please enter valid email address.";
-  } else {
-   // check email exist or not
-   $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
-   $result = mysql_query($query);
-   $count = mysql_num_rows($result);
-   if($count!=0){
-    $error = true;
-    $emailError = "Provided Email is already in use.";
-   }
-  }
-  // password validation
-  if (empty($pass)){
-   $error = true;
-   $passError = "Please enter password.";
-  } else if(strlen($pass) < 6) {
-   $error = true;
-   $passError = "Password must have atleast 6 characters.";
-  }
-  
-  // password encrypt using SHA256();
-  $password = hash('sha256', $pass);
-  
-  // if there's no error, continue to signup
-  if( !$error ) {
-   
-   $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$username','$email','$password')";
-   $res = mysql_query($query);
+/**
+ * Include ircmaxell's password_compat library.
+ */
+require 'password.php';
+
+/**
+ * Include our MySQL connection.
+ */
+require 'Dao.php';
+
+
+//If the POST var "register" exists (our submit button), then we can
+//assume that the user has submitted the registration form.
+if(isset($_POST['register'])){
     
-   if ($res) {
-    $errTyp = "success";
-    $errMSG = "Successfully registered, you may login now";
-    unset($username);
-    unset($email);
-    unset($pass);
-   } else {
-    $errTyp = "danger";
-    $errMSG = "Something went wrong, try again later..."; 
-   } 
+    //Retrieve the field values from our registration form.
+    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+    $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
     
-  }
-  
-  
- }
+    //TO ADD: Error checking (username characters, password length, etc).
+    //Basically, you will need to add your own error checking BEFORE
+    //the prepared statement is built and executed.
+    
+    //Now, we need to check if the supplied username already exists.
+    
+    //Construct the SQL statement and prepare it.
+    $sql = "SELECT COUNT(username) AS num FROM users WHERE username = :username";
+    $stmt = $pdo->prepare($sql);
+    
+    //Bind the provided username to our prepared statement.
+    $stmt->bindValue(':username', $username);
+    
+    //Execute.
+    $stmt->execute();
+    
+    //Fetch the row.
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    //If the provided username already exists - display error.
+    //TO ADD - Your own method of handling this error. For example purposes,
+    //I'm just going to kill the script completely, as error handling is outside
+    //the scope of this tutorial.
+    if($row['num'] > 0){
+        die('That username already exists!');
+    }
+    
+    //Hash the password as we do NOT want to store our passwords in plain text.
+    $passwordHash = password_hash($pass, PASSWORD_BCRYPT, array("cost" => 12));
+    
+    //Prepare our INSERT statement.
+    //Remember: We are inserting a new row into our users table.
+    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $stmt = $pdo->prepare($sql);
+    
+    //Bind our variables.
+    $stmt->bindValue(':username', $username);
+    $stmt->bindValue(':password', $passwordHash);
+
+    //Execute the statement and insert the new account.
+    $result = $stmt->execute();
+    
+    //If the signup process is successful.
+    if($result){
+        //What you do here is up to you!
+        echo 'Thank you for registering with our website.';
+    }
+    
+}
+
 ?>
+
