@@ -22,8 +22,8 @@ and password='".md5($password)."'";
          }else{
 	echo "<div class='form'>
 <h3>Username/password is incorrect.</h3>
-<br/>Click here to <a href='login.php'>Login</a></div>";
-        echo "<p>Not registered yet? <a href='registration.html'>Register Here</a></p>";
+<br/>Click here to <a href='index.php'>Login</a></div>";
+        echo "<p>Not registered yet? <a href='registration.php'>Register Here</a></p>";
 	}
 }
 ?>
