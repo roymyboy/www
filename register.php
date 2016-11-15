@@ -69,11 +69,12 @@ if (isset($_POST['signup'])) {
                         <label for="name">Confirm Password</label>
                         <input type="password" name="cpassword" placeholder="Confirm Password" required class="form-control" />
                         <span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
-
-                        <button type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
+			<div class="form-group">
+	
+                        <button type="submit" name="signup" value="Sign Up" class="btn btn-primary" /> </div>
+		<div class= "etc-login-form">
                 </fieldset>
-        	<div class="col-md-4 col-md-offset-4 text-center">    
-       		 Already Registered? <a href="index.php">Login Here</a>
+        	<p> Already Registered? <a href="index.php">Login Here</a></p>
 		</div>
             </form>
             <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
@@ -81,5 +82,4 @@ if (isset($_POST['signup'])) {
 </div>
 </body>
 </html>
-
 <?php ob_end_flush(); ?>
