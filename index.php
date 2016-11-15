@@ -73,7 +73,7 @@
           <input type="email" name="name" id="" placeholder="email@email.com" class="username" <?php echo $email;?> maxlength= "40" required>
           <label for="password"></label>
           <input type="password" name="password" id="" placeholder="password" class="from-control" maxlength="15" required>
-          <button type="submit" name= "login" value="Login">login</button>
+          <button type="submit" name= "btn-login" value="Login">login</button>
           <div class="etc-login-form">
                 <p>forgot your password? <a href="forgotpw.html">click here</a></p>
                 <p>new user? <a href="register.php">create new account</a></p>
