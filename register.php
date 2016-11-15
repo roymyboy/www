@@ -1,68 +1,87 @@
 <?php
-//include 'sessionStart.php';
-
-if (empty($_POST) === false){
-		$required_fields = array ('username', 'password', 'password Confirm', 'full name', 'email');
-		foreach($_POST as $key=>$value){
-			if (empty($value) && in_array ($key, $required_fields) === true){
-				$errors[] = '<h2> Shucks,... something went wrong! Please fill the form again to register.</h2><br><h4>Feilds marked with an asterisk are required</h4>';
-				break 1;
-				
-			}
-			 
-		}
-	
-	if (empty($errors) === true){
-		if (user_exists($_POST['username']) === true) {
-			$errors[] = '<h4>Sorry, the username \'' . $_POST['username'] . '\' is already taken</h4>';
-		}
-	if (preg_match("/\\s/",$_POST['username']) == true){
-			$errors[] = '<h4>Your username must not contain any spaces</h4>';
-		}
-		
-	if (strlen($_POST['password']) < 8) {
-		$errors[] = '<h4>Your password must be at least 8 characters</h4>';
-		
-		}
-		
-	if ($_POST['password'] !== $_POST['password_again']){
-		$errors[] = '<h4>Your passwords do not match</h4>';
-		
-		}
-		
-	if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
-		$errors[] = '<h4> A valid email address is required</h4>';
-		
-		}
-	if (email_exists($_POST[email]) === true) {
-		$errors[] = '<h4>Sorry, the email  \'' . $_POST['email'] . '\' is already in use</h4>';
-		}
-		
-		
-		
-	}
-		
+ob_start();
+ session_start();
+ if( isset($_SESSION['user'])!="" ){
+  header("Location: home.php");
  }
+ include_once 'dbconnect.php';
 
-?>
-<?php
-if (isset($_GET['success']) && empty ($_GET['success'])) {
-} else { 
-	if (empty($_POST) === false && empty ($errors) === true) {
-		$register_data = array(
-			'username' 		=> $_POST[nl2br(htmlspecialchars('username'))],
-			'password' 		=> $_POST[nl2br(htmlspecialchars('password'))],
-			'full name' 		=> $_POST[nl2br(htmlspecialchars('full name'))],
-			'email' 		=> $_POST[nl2br(htmlspecialchars('email'))]
-		);
-	
-		register_user($register_data);
-		header('Location: register.php?success');
-		exit();
-		
-	} else if (empty($errors) === false) {
-		echo output_errors($errors);
-	}
+ $error = false;
+
+ if ( isset($_POST['btn-signup']) ) {
+  
+  // clean user inputs to prevent sql injections
+  $name = trim($_POST['name']);
+  $name = strip_tags($name);
+  $name = htmlspecialchars($name);
+  
+  $email = trim($_POST['email']);
+  $email = strip_tags($email);
+  $email = htmlspecialchars($email);
+  
+  $pass = trim($_POST['pass']);
+  $pass = strip_tags($pass);
+  $pass = htmlspecialchars($pass);
+  
+  // basic name validation
+  if (empty($name)) {
+   $error = true;
+   $nameError = "Please enter your full name.";
+  } else if (strlen($name) < 3) {
+   $error = true;
+   $nameError = "Name must have atleat 3 characters.";
+  } else if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
+   $error = true;
+   $nameError = "Name must contain alphabets and space.";
+  }
+
+//basic email validation
+  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+   $error = true;
+   $emailError = "Please enter valid email address.";
+  } else {
+   // check email exist or not
+   $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
+   $result = mysql_query($query);
+   $count = mysql_num_rows($result);
+   if($count!=0){
+    $error = true;
+    $emailError = "Provided Email is already in use.";
+   }
+  }
+  // password validation
+  if (empty($pass)){
+   $error = true;
+   $passError = "Please enter password.";
+  } else if(strlen($pass) < 6) {
+   $error = true;
+   $passError = "Password must have atleast 6 characters.";
+  }
+  
+  // password encrypt using SHA256();
+  $password = hash('sha256', $pass);
+  
+  // if there's no error, continue to signup
+  if( !$error ) {
+   
+   $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
+   $res = mysql_query($query);
+    
+   if ($res) {
+    $errTyp = "success";
+    $errMSG = "Successfully registered, you may login now";
+    unset($name);
+	  unset($email);
+    unset($pass);
+   } else {
+    $errTyp = "danger";
+    $errMSG = "Something went wrong, try again later..."; 
+   } 
+    
+  }
+  
+ 
+ }
 
 ?>
 <!DOCTYPE html>
@@ -121,7 +140,7 @@ if (isset($_GET['success']) && empty ($_GET['success'])) {
                 </form>
         </div>
         <!-- end:Main Form -->
-<?php } ?>
 </div>
 </body>
 </html>
+<?php ob_end_flush(); ?>
