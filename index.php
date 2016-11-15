@@ -70,9 +70,9 @@
         <!--Login setup-->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
           <label for="username"></label>
-          <input type="email" name="name" id="" placeholder="email@email.com" class="username" <?php echo $email;?> maxlength= "40" required>
+          <input type="email" name="name" id="" placeholder="email@email.com" class="form-control" <?php echo $email;?> maxlength= "40" required>
           <label for="password"></label>
-          <input type="password" name="password" id="" placeholder="password" class="from-control" maxlength="15" required>
+          <input type="password" name="pass" id="" placeholder="password" class="form-control" maxlength="15" required>
           <button type="submit" name= "btn-login" value="Login">login</button>
           <div class="etc-login-form">
                 <p>forgot your password? <a href="forgotpw.html">click here</a></p>
