@@ -37,17 +37,23 @@ if (isset($_POST['login'])) {
         </div>
 
         <!--Login setup-->
-        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform">
-          <label for="username"></label>
-          <input type="text" name="email" id="" placeholder="email@email.com" class="form-control" required>
+        <form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
+	  <div class="form-group">
+	  <label for="email"></label>
+          <input type="text" name="email" placeholder="email@email.com" required class="form-control">
+	  </div>	 
+	  <div class="form-group">
           <label for="password"></label>
-          <input type="password" name="pass" id="" placeholder="password" class="form-control" maxlength="15" required>
-          <button type="submit" name= "login" value="Login">login</button>
+          <input type="password" name="password" placeholder="password" required class="form-control">
+	  </div>
+	  <div class="form-group">
+          <button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
           <div class="etc-login-form">
                 <p>forgot your password? <a href="forgotpw.html">click here</a></p>
                 <p>new user? <a href="register.php">create new account</a></p>
         </div>
         </form>
+	<span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 
 </html>
 <?php ob_end_flush(); ?>
