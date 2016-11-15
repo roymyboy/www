@@ -1,5 +1,5 @@
 <?php
-logged_in_redirect();
+//logged_in_redirect();
 
 if (empty($_POST) === false){
 		$required_fields = array ('username', 'password', 'password Confirm', 'full name', 'email');
