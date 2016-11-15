@@ -1,14 +1,4 @@
 <?php
-function admin_protect() {
-	global $user_data;
-	if (has_access($user_data['user_id'], 1) === false) {
-		header('Location: index.php');
-		exit(); 
-		
-	}
-	
-}
-
 
 function array_sanitize(&$item) {
 	$item = htmlentities(strip_tags(mysql_real_escape_string($item)));

@@ -1,3 +1,4 @@
+<?php include sessionStart.php
 <!DOCTYPE html>
 <html>	
 	<head>
@@ -11,7 +12,7 @@
 	</div>
 
 	<!--Login setup-->
-   	<form action="index.php" method="POST">
+   	<form action="login.php" method="POST">
 	  <label for="username@email.com"></label>
  	  <input type="text" name="username@email.com" id="" placeholder="username@email.com" class="email" required>
 	  <label for="password"></label>
@@ -24,3 +25,5 @@
 	</form> 
 
 </html>
+
+?>
