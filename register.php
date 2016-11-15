@@ -4,7 +4,7 @@ ob_start();
  if( isset($_SESSION['user'])!="" ){
   header("Location: home.php");
  }
- include_once 'dbconnect.php';
+ include_once 'connect.php';
 
  $error = false;
 
