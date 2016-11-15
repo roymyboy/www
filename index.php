@@ -47,7 +47,7 @@ require('connect.php');
           <input type="text" name="username" id="" placeholder="username" class="username" required>
           <label for="password"></label>
           <input type="password" name="password" id="" placeholder="password" class="pass" required>
-          <input type="submit" name= "login" value="Login">login</button>
+          <button type="submit" name= "login" value="Login">login</button>
           <div class="etc-login-form">
                 <p>forgot your password? <a href="forgotpw.html">click here</a></p>
                 <p>new user? <a href="register.php">create new account</a></p>
