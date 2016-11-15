@@ -42,12 +42,12 @@ if (isset($_POST['login'])) {
 			<label for="email"></label>
 			<input type="email" name="email" placeholder="email@email.com" required class="email">
 			<label for="password"></label>
-			<input type="password" name="password" placeholder="password" required class="form-control">
+			<input type="password" name="password" placeholder="password" required class="password">
 		<div class="form-group">
-			<button type="submit" name= "login" value="Login" class="password">login</button> </div>
+			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
 			<div class="etc-login-form">
-			<p>forgot your password? <a href="forgotpw.html">click here</a></p>
-			<p>new user? <a href="register.php">create new account</a></p>
+			<p>Forgot Password? <a href="forgotpw.html">click here</a></p>
+			<p>New User? <a href="register.php">create new account</a></p>
 		</div>
 	</form>
 	<span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
