@@ -52,9 +52,9 @@ if (isset($_POST['login'])) {
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
 		<fieldset>
 
-		<div class="form-group">
 			<legend>Login</legend>
 	               <span class="text-danger"> <style= "color:red"><?php if(isset($errormsg)){echo $errormsg;}?></span>
+		<div class="form-group">
 			<label for="email"></label>
 			<input type="email" name="email" placeholder="email@email.com" required class="email">
 		</div>
