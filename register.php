@@ -41,11 +41,6 @@ if (isset($_POST['signup'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<!--<head>
-    <title>User Registration</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-</head> -->
 <body>
 <div class="container">
     <div class="row">
