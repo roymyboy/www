@@ -82,10 +82,10 @@ if (isset($_POST['signup'])) {
                         <button type="submit" name="signup" value="Sign Up" class="btn btn-primary" />Sign Up</button> </div>
 		<div class= "etc-login-form">
                 </fieldset>
+            <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
         	<p> Already Registered? <a href="index.php">Login Here</a></p>
 		</div>
             </form>
-            <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
             <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
 </div>
 </body>
