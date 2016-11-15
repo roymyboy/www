@@ -1,3 +1,27 @@
+
+<?php
+include 'index.php';
+?>
+<?php
+if (isset($_GET['success']) && empty ($_GET['success'])) {
+} else { 
+	if (empty($_POST) === false && empty ($errors) === true) {
+		$register_data = array(
+			'username' 		=> $_POST[nl2br(htmlspecialchars('username'))],
+			'password' 		=> $_POST[nl2br(htmlspecialchars('password'))],
+			'full name' 		=> $_POST[nl2br(htmlspecialchars('full name'))],
+			'email' 		=> $_POST[nl2br(htmlspecialchars('email'))]
+		);
+	
+		register_user($register_data);
+		header('Location: register.php?success');
+		exit();
+		
+	} else if (empty($errors) === false) {
+		echo output_errors($errors);
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,29 +32,7 @@
 <div class="text-center" style="padding:50px 0">
         <div class="logo">Register</div>
 <body>
-<?php
-require('Dao.php');
-// If form submitted, insert values into the database.
-if (isset($_REQUEST['username'])){
-        // removes backslashes
-	$username = stripslashes($_REQUEST['username']);
-        //escapes special characters in a string
-	$username = mysqli_real_escape_string($con,$username); 
-	$email = stripslashes($_REQUEST['email']);
-	$email = mysqli_real_escape_string($con,$email);
-	$password = stripslashes($_REQUEST['password']);
-	$password = mysqli_real_escape_string($con,$password);
-	$id = date("Y-m-d H:i:s");
-        $query = "INSERT into `users` (username, password, email, id)
-VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
-        $result = mysqli_query($con,$query);
-        if($result){
-            echo "<div class='form'>
-<h3>You are registered successfully.</h3>
-<br/>Click here to <a href='index.php'>Login</a></div>";
-        }
-    }else{
-?>
+
   <!-- Main Form -->
         <div class="login-form-1">
                 <form action="" method="post">
@@ -38,7 +40,7 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
                         <div class="main-login-form">
                                 <div class="login-group">
                                         <div class="form-group">
-                                                <label for="reg_username" class="sr-only">User Name</label>
+                                                <label for="reg_username" class="sr-only">username</label>
                                                 <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
                                         </div>
                                         <div class="form-group">
@@ -50,11 +52,11 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
                                                 <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
                                         </div>
                                         <div class="form-group">
-                                                <label for="reg_email" class="sr-only">Email</label>
+                                                <label for="reg_email" class="sr-only">email</label>
                                                 <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
                                         </div>
                                         <div class="form-group">
-                                                <label for="reg_fullname" class="sr-only">Full Name</label>
+                                                <label for="reg_fullname" class="sr-only">full name</label>
                                                 <input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
                                         </div>
                                <div class="form-group login-group-checkbox">
