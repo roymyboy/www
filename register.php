@@ -82,5 +82,3 @@ if (isset($_GET['success']) && empty ($_GET['success'])) {
 </div>
 </body>
 </html>
-                                                                                       61,7          Bot
-
