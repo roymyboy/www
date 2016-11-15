@@ -24,8 +24,8 @@ if (isset($_POST['signup'])) {
     } else {
 	//check if user already exists 
 	$query = "SELECT email FROM users WHERE email='$email'";
-	$result = mysql_query($query);
-	$count = mysql_num_rows($result);
+	$result = mysqli_query($query);
+	$count = mysqli_num_rows($result);
 		if($count != 0){
 			$error = true;
 			$email_error = "Provided email already exists";
