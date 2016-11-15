@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(isset($_SESSION['usr_id'])) {
-    header("Location: index.php");
+    header("Location: welcome.php");
 }
 include_once 'connect.php';
 //set validation error flag as false
@@ -42,60 +42,81 @@ if (isset($_POST['signup'])) {
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
- <link rel = "stylesheet" type="text/css" herf="style.css">
-<link rel = "icon" type ="image/png" href= "image/favicon.png">
+    <title>User Registration Script</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 </head>
-<div class="text-center" style="padding:50px 0">
-        <div class="logo">Register</div>
 <body>
 
-  <!-- Main Form -->
-        <div class="login-form-1">
-                <form action="" method="post">
-                        <div class="login-form-main-message"></div>
-                        <div class="main-login-form">
-                                <div class="login-group">
-                                        <div class="form-group">
-                                                <label for="reg_username" class="sr-only">Username</label>
-                                                <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="reg_password" class="sr-only">Password</label>
-                                                <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-                                                <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="reg_email" class="sr-only">email</label>
-                                                <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="reg_fullname" class="sr-only">full name</label>
-                                                <input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
-                                        </div>
-                               <div class="form-group login-group-checkbox">
-                                                <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-                                                <label for="male">male</label>
-                                                <input type="radio" class="" name="reg_gender" id="female" placeholder="username">
-                                                <label for="female">female</label>
-                                        </div>
-                                        <div class="form-group login-group-checkbox">
-                                                <input type="checkbox" class="" id="reg_agree" name="reg_agree">
-                                                <label for="reg_agree">i agree with <a href="terms.html">terms</a></label>
-                                        </div>
-                                </div>
-                                <button type="submit" name="signup" value="submit">Submit</button>
-                        </div>
-                        <div class="etc-login-form">
-                                <p>already have an account? <a href="index.php">login here</a></p>
-                        </div>
-                </form>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- add header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">Koding Made Simple</a>
         </div>
-        <!-- end:Main Form -->
+        <!-- menu items -->
+        <div class="collapse navbar-collapse" id="navbar1">
+ <ul class="nav navbar-nav navbar-right">
+                <li><a href="login.php">Login</a></li>
+                <li class="active"><a href="register.php">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 well">
+            <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
+                <fieldset>
+                    <legend>Sign Up</legend>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
+                        <span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="form-control" />
+                        <span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Password</label>
+                        <input type="password" name="password" placeholder="Password" required class="form-control" />
+                        <span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
+  </div>
+
+                    <div class="form-group">
+                        <label for="name">Confirm Password</label>
+                        <input type="password" name="cpassword" placeholder="Confirm Password" required class="form-control" />
+                        <span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
+                    </div>
+                </fieldset>
+            </form>
+            <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
+            <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center">    
+        Already Registered? <a href="index.php">Login Here</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
+
 <?php ob_end_flush(); ?>
