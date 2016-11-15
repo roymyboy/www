@@ -39,14 +39,10 @@ if (isset($_POST['login'])) {
 	<!--Login setup-->
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
-		<div class="form-group">
 			<label for="email"></label>
 			<input type="email" name="email" placeholder="email@email.com" required class="form-control">
-		</div>	 
-		<div class="form-group">
 			<label for="password"></label>
 			<input type="password" name="password" placeholder="password" required class="form-control">
-		</div>
 		<div class="form-group">
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
 			<div class="etc-login-form">
