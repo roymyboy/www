@@ -32,7 +32,7 @@ if (isset($_POST['signup'])) {
     }
     if (!$error) {
         if(mysqli_query($con, "INSERT INTO users(name,email,password) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
-            $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
+            $successmsg = "Successfully Registered! <a href='index.php'>Click here to Login</a>";
 	 } else {
             $errormsg = "Error in registering...Please try again later!";
         }
@@ -42,7 +42,7 @@ if (isset($_POST['signup'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Registration Script</title>
+    <title>User Registration</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 </head>
