@@ -40,11 +40,11 @@ if (isset($_POST['login'])) {
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
 			<label for="email"></label>
-			<input type="email" name="email" placeholder="email@email.com" required class="form-control">
+			<input type="email" name="email" placeholder="email@email.com" required class="email">
 			<label for="password"></label>
 			<input type="password" name="password" placeholder="password" required class="form-control">
 		<div class="form-group">
-			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
+			<button type="submit" name= "login" value="Login" class="pass">login</button> </div>
 			<div class="etc-login-form">
 			<p>forgot your password? <a href="forgotpw.html">click here</a></p>
 			<p>new user? <a href="register.php">create new account</a></p>
