@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
     		$_SESSION['user'] = $row['userId'];
     		header("Location: home.php");
    	} else {
-    		$errormsg = "Incorrect Email or Password, Try again!!!";
+    		$errormsg = "<span style="color:red">Incorrect Email or Password, Try again!!!</span>";
    	}
 	
 
