@@ -1,5 +1,5 @@
 <?php
-require_once 'sessionStart.php';
+include 'sessionStart.php';
 
 if (empty($_POST) === false){
 		$required_fields = array ('username', 'password', 'password Confirm', 'full name', 'email');

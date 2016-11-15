@@ -1,9 +1,8 @@
 <?php
 
 
-
 function mail_users($subject, $body) {
-	$query = mysql_query("SELECT `email`, `first_name` FROM `users` WHERE `allow_email` = 1");
+	$query = mysql_query("SELECT `email` FROM `users` WHERE `allow_email` = 1");
 	while (($row = mysql_fetch_assoc($query)) !== false) {
 		email($row['email'], $subject, "Hello " . $row['first_name'] . ",\n\n" . $body . "\n\n -bsu-pingpong.com");
 	
@@ -25,14 +24,14 @@ function recover($mode, $email) {
 	$user_data = user_data(user_id_from_email($email), 'user_id', 'first_name', 'username');
 	
 	if ($mode == 'username') {
-		email($email, 'Your username recovery', "Hello " . $user_data['first_name'] . ",\n\nYour username is: " . $user_data['username'] . "\n\n-bsu-pingpong.com");
+		email($email, 'Your username recovery', "Hello " . $user_data['full name'] . ",\n\nYour username is: " . $user_data['username'] . "\n\n-bsu-pingpong.com");
 	} else if ($mode == 'password') {
 		$generated_password = substr(md5(rand(999, 999999)), 0, 8);
 		change_password($user_data['user_id'], $generated_password);
 		
 		update_user($user_data['$user_id'], array('password_recover' => '1'));
 		
-		email($email, 'Your password recovery', "Hello " . $user_data['first_name'] . ",\n\nYour temporary password is: " . $generated_password . "\n\nPlease loggin to your account to change your password.\n\n-bsu-pingpong.com");	
+		email($email, 'Your password recovery', "Hello " . $user_data['full name'] . ",\n\nYour temporary password is: " . $generated_password . "\n\nPlease loggin to your account to change your password.\n\n-bsu-pingpong.com");	
 	
 	}
 	
