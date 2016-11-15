@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
 			<label for="password"></label>
 			<input type="password" name="password" placeholder="password" required class="form-control">
 		<div class="form-group">
-			<button type="submit" name= "login" value="Login" class="pass">login</button> </div>
+			<button type="submit" name= "login" value="Login" class="password">login</button> </div>
 			<div class="etc-login-form">
 			<p>forgot your password? <a href="forgotpw.html">click here</a></p>
 			<p>new user? <a href="register.php">create new account</a></p>
