@@ -39,6 +39,8 @@ if (isset($_POST['login'])) {
 	<!--Login setup-->
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
+		<fieldset>
+			<legend>Login</legend>
 			<label for="email"></label>
 			<input type="email" name="email" placeholder="email@email.com" required class="email">
 			<label for="password"></label>
@@ -46,6 +48,7 @@ if (isset($_POST['login'])) {
 		<div class="form-group">
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
 			<div class="etc-login-form">
+		<fieldset>
 			<p>Forgot Password? <a href="forgotpw.html">click here</a></p>
 			<p>New User? <a href="register.php">create new account</a></p>
 		</div>
