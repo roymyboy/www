@@ -33,7 +33,7 @@ form {
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
-  height: auto;
+  height: 500px;
   margin: auto;
   background: rgba(130,130,130,.3);
   padding: 20px 22px;
