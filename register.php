@@ -44,8 +44,8 @@ if (empty($_POST) === false){
 		
  }
 
-
-
+?>
+<?php
 if (isset($_GET['success']) && empty ($_GET['success'])) {
 } else { 
 	if (empty($_POST) === false && empty ($errors) === true) {
