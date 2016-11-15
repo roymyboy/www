@@ -7,6 +7,12 @@
       <title>Welcome </title>
    </head>
    <body>
-      <h2><a href = "logout.php">Sign Out</a></h2>
+      <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="nav navbar-nav navbar-right">
+                <?php if (isset($_SESSION['usr_id'])) { ?>
+                <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+                <li><a href = "logout.php">Sign Out</a>
+	    </li></ul>
+      </div>
    </body>
 </html>
