@@ -1,58 +1,27 @@
 <?php
- ob_start();
- session_start();
- require_once 'connect.php';
- 
- // it will never let you open index(login) page if session is set
- if ( isset($_SESSION['user'])!="" ) {
-  header("Location: welcome.php");
-  exit;
- }
- 
- $error = false;
- 
- if( isset($_POST['btn-login']) ) { 
-  
-  // prevent sql injections/ clear user invalid inputs
-  $email = trim($_POST['email']);
-  $email = strip_tags($email);
-  $email = htmlspecialchars($email);
-  
-  $pass = trim($_POST['pass']);
-  $pass = strip_tags($pass);
-  $pass = htmlspecialchars($pass);
-  // prevent sql injections / clear user invalid inputs
-  
-  if(empty($email)){
-   $error = true;
-   $emailError = "Please enter your email address.";
-  } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-   $error = true;
-   $emailError = "Please enter valid email address.";
-  }
-  if(empty($pass)){
-   $error = true;
-   $passError = "Please enter your password.";
-  }
-  
-  // if there's no error, continue to login
-  if (!$error) {
-   
-   $password = hash('sha256', $pass); // password hashing using SHA256
-  
-   $res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
-   $row=mysql_fetch_array($res);
-   $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
-   
-   if( $count == 1 && $row['userPass']==$password ) {
-    $_SESSION['user'] = $row['userId'];
-    header("Location: welcome.php");
-   } else {
-    $errMSG = "Incorrect Credentials, Try again...";
-   }
-    
-  } 
- }   
+session_start();
+
+if(isset($_SESSION['usr_id'])!="") {
+    header("Location: index.php");
+}
+
+include_once 'connect.php';
+
+//check if form is submitted
+if (isset($_POST['login'])) {
+
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $result = mysqli_query($con, "SELECT * FROM users WHERE email = '" . $email. "' and password = '" . md5($password) . "'");
+
+    if ($row = mysqli_fetch_array($result)) {
+        $_SESSION['usr_id'] = $row['id'];
+        $_SESSION['usr_name'] = $row['name'];
+        header("Location: index.php");
+    } else {
+        $errormsg = "Incorrect Email or Password!!!";
+    }
+}  
 ?>
 
 <!DOCTYPE html>
@@ -68,12 +37,12 @@
         </div>
 
         <!--Login setup-->
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform">
           <label for="username"></label>
-          <input type="email" name="name" id="" placeholder="email@email.com" class="form-control" <?php echo $email;?> maxlength= "40" required>
+          <input type="text" name="email" id="" placeholder="email@email.com" class="form-control" required>
           <label for="password"></label>
           <input type="password" name="pass" id="" placeholder="password" class="form-control" maxlength="15" required>
-          <button type="submit" name= "btn-login" value="Login">login</button>
+          <button type="submit" name= "login" value="Login">login</button>
           <div class="etc-login-form">
                 <p>forgot your password? <a href="forgotpw.html">click here</a></p>
                 <p>new user? <a href="register.php">create new account</a></p>
