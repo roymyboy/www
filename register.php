@@ -82,7 +82,7 @@ if (isset($_POST['signup'])) {
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
+                        <button type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
                     </div>
                 </fieldset>
             </form>
