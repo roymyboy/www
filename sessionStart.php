@@ -5,7 +5,7 @@ session_start();
 
 require 'Dao.php';
 require 'connect.php';
-require 'sanatize.php';
+require 'sanitize.php';
 require 'users.php';
 
 $current_file = explode('/', $_SERVER['SCRIPT_NAME']);
