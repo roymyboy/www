@@ -41,7 +41,7 @@ if (isset($_POST['login'])) {
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
 		<div class="form-group">
 			<label for="email"></label>
-			<input type="text" name="email" placeholder="email@email.com" required class="form-control">
+			<input type="email" name="email" placeholder="email@email.com" required class="form-control">
 		</div>	 
 		<div class="form-group">
 			<label for="password"></label>
