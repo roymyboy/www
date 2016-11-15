@@ -24,7 +24,7 @@ if (isset($_POST['signup'])) {
     } else {
 	//check if user already exists 
 	$query = "SELECT email FROM users WHERE email='$email'";
-	$result = mysqli_query($query);
+	$result = mysqli_query($con, $query);
 	$count = mysqli_num_rows($result);
 		if($count != 0){
 			$error = true;
@@ -71,7 +71,7 @@ if (isset($_POST['signup'])) {
 			<div class="form-group">
                         <label for="name">Email</label>
                         <input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="email" />
-                        <span class="text-danger"><?php echo $email_error; ?></span>
+                        <span class="text-danger"><?php if (isset($email_error))echo  $email_error; ?></span>
 
                     </div>	
 			<div class="form-group">
