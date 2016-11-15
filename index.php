@@ -13,6 +13,8 @@ if (isset($_POST['login'])) {
 	$email = mysqli_real_escape_string($con, $_POST['email']);
 	$password = mysqli_real_escape_string($con, $_POST['password']);
 	$result = mysqli_query($con, "SELECT * FROM users WHERE email = '" . $email. "' and password = '" . md5($password) . "'");
+	$count = mysqli_num_rows($result);
+	
 
 	if ($row = mysqli_fetch_array($result)) {
 		$_SESSION['usr_id'] = $row['id'];
@@ -21,6 +23,15 @@ if (isset($_POST['login'])) {
 	} else {
 		$errormsg = "Incorrect Email or Password!!!";
 	}
+
+	 if( $count == 1 && $row['password']==$password ) {
+    		$_SESSION['user'] = $row['userId'];
+    		header("Location: home.php");
+   	} else {
+    		$errormsg = "Incorrect Credentials, Try again...";
+   	}
+	
+
 }  
 ?>
 
@@ -45,10 +56,12 @@ if (isset($_POST['login'])) {
 			<legend>Login</legend>
 			<label for="email"></label>
 			<input type="email" name="email" placeholder="email@email.com" required class="email">
+			<span class="text-danger"><?php echo $errormsg; ?></span>
 		</div>
 		<div class="form-group">
 			<label for="password"></label>
 			<input type="password" name="password" placeholder="password" required class="password">
+			<span class="text-danger"><?php echo $errormsg; ?></span>
 		</div>
 		<div class="form-group">
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
