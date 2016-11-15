@@ -42,7 +42,7 @@ if (isset($_POST['signup'])) {
 <!DOCTYPE html>
 <html>
 	 <head>
-                <link rel = "stylesheet" type="text/css" href="style.css">
+                <link rel = "stylesheet" type="text/css" href="styl.css">
                 <link rel = "icon" type ="image/png" href= "image/favicon.png">
         </head>
 	<!--background image-->
