@@ -11,7 +11,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isset($_SESSION['usr_id'])){ ?>
                 <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
-                <li><a href = "logout.php">Sign Out</a> <?php } ?>
+                <li><a href = "logout.php">Sign Out</a> <?php } else { ?>
+		<li><a herf="index.php">Login</a></li>
+		<?php } ?>
 	    </li></ul>
       </div>
    </body>
