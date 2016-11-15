@@ -1,5 +1,5 @@
 <?php
-include 'index.php';
+include 'sessionStart.php';
 logged_in_redirect();
 if (empty ($_POST)=== false) {
 	$username = $_POST['email'];
