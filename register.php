@@ -116,7 +116,7 @@ if (isset($_GET['success']) && empty ($_GET['success'])) {
                                 <button type="submit" form="register" value="submit">Submit</button>
                         </div>
                         <div class="etc-login-form">
-                                <p>already have an account? <a href="index.html">login here</a></p>
+                                <p>already have an account? <a href="index.php">login here</a></p>
                         </div>
                 </form>
         </div>
