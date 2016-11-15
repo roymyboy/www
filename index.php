@@ -1,5 +1,5 @@
 <?php
-require('main.php');
+require('main.html');
 require('Dao.php');
 session_start();
 // If form submitted, insert values into the database.
