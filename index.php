@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
     		$_SESSION['user'] = $row['userId'];
     		header("Location: home.php");
    	} else {
-    		$errormsg = "Incorrect Credentials, Try again...";
+    		$errormsg = "Incorrect Email or Password, Try again...";
    	}
 	
 
@@ -56,7 +56,6 @@ if (isset($_POST['login'])) {
 			<legend>Login</legend>
 			<label for="email"></label>
 			<input type="email" name="email" placeholder="email@email.com" required class="email">
-			<span class="text-danger"><?php echo $errormsg; ?></span>
 		</div>
 		<div class="form-group">
 			<label for="password"></label>
@@ -67,12 +66,11 @@ if (isset($_POST['login'])) {
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
 			<div class="etc-login-form">
 		</fieldset>
-			<span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 			<p>Forgot Password? <a href="forgotpw.html">click here</a></p>
 			<p>New User? <a href="register.php">create new account</a></p>
+	               <span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 		</div>
 	</form>
-	<span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
    </div>	
 </html>
 <?php ob_end_flush(); ?>
