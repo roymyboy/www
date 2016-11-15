@@ -1,7 +1,3 @@
-
-<?php
-include 'index.php';
-?>
 <?php
 if (isset($_GET['success']) && empty ($_GET['success'])) {
 } else { 
