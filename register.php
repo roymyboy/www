@@ -1,4 +1,51 @@
 <?php
+logged_in_redirect();
+
+if (empty($_POST) === false){
+		$required_fields = array ('username', 'password', 'password Confirm', 'full name', 'email');
+		foreach($_POST as $key=>$value){
+			if (empty($value) && in_array ($key, $required_fields) === true){
+				$errors[] = '<h2> Shucks,... something went wrong! Please fill the form again to register.</h2><br><h4>Feilds marked with an asterisk are required</h4>';
+				break 1;
+				
+			}
+			 
+		}
+	
+	if (empty($errors) === true){
+		if (user_exists($_POST['username']) === true) {
+			$errors[] = '<h4>Sorry, the username \'' . $_POST['username'] . '\' is already taken</h4>';
+		}
+	if (preg_match("/\\s/",$_POST['username']) == true){
+			$errors[] = '<h4>Your username must not contain any spaces</h4>';
+		}
+		
+	if (strlen($_POST['password']) < 8) {
+		$errors[] = '<h4>Your password must be at least 8 characters</h4>';
+		
+		}
+		
+	if ($_POST['password'] !== $_POST['password_again']){
+		$errors[] = '<h4>Your passwords do not match</h4>';
+		
+		}
+		
+	if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
+		$errors[] = '<h4> A valid email address is required</h4>';
+		
+		}
+	if (email_exists($_POST[email]) === true) {
+		$errors[] = '<h4>Sorry, the email  \'' . $_POST['email'] . '\' is already in use</h4>';
+		}
+		
+		
+		
+	}
+		
+ }
+
+
+
 if (isset($_GET['success']) && empty ($_GET['success'])) {
 } else { 
 	if (empty($_POST) === false && empty ($errors) === true) {
@@ -36,7 +83,7 @@ if (isset($_GET['success']) && empty ($_GET['success'])) {
                         <div class="main-login-form">
                                 <div class="login-group">
                                         <div class="form-group">
-                                                <label for="reg_username" class="sr-only">username</label>
+                                                <label for="reg_username" class="sr-only">Username</label>
                                                 <input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
                                         </div>
                                         <div class="form-group">
