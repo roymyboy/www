@@ -76,7 +76,7 @@ if (isset($_POST['signup'])) {
                     </div>	
 			<div class="form-group">
                         <label for="name">Password</label>
-                        <input type="password" name="password" placeholder="Password" required class="form-control" />
+                        <input type="password" name="password" placeholder="Password" required class="password" />
                         <span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
 
                     </div>	
