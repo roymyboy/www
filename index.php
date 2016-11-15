@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
     		$_SESSION['user'] = $row['userId'];
     		header("Location: home.php");
    	} else {
-    		$errormsg = "Incorrect Email or Password, Try again...";
+    		$errormsg = "Incorrect Email or Password, Try again!!!";
    	}
 	
 
@@ -52,6 +52,7 @@ if (isset($_POST['login'])) {
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
 		<fieldset>
 
+	               <span class="text-danger"> <style= "color:red"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 		<div class="form-group">
 			<legend>Login</legend>
 			<label for="email"></label>
@@ -60,7 +61,6 @@ if (isset($_POST['login'])) {
 		<div class="form-group">
 			<label for="password"></label>
 			<input type="password" name="password" placeholder="password" required class="password">
-			<span class="text-danger"><?php echo $errormsg; ?></span>
 		</div>
 		<div class="form-group">
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
@@ -68,7 +68,6 @@ if (isset($_POST['login'])) {
 		</fieldset>
 			<p>Forgot Password? <a href="forgotpw.html">click here</a></p>
 			<p>New User? <a href="register.php">create new account</a></p>
-	               <span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 		</div>
 	</form>
    </div>	
