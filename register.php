@@ -41,6 +41,14 @@ if (isset($_POST['signup'])) {
 ?>
 <!DOCTYPE html>
 <html>
+	 <head>
+                <link rel = "stylesheet" type="text/css" href="style.css">
+                <link rel = "icon" type ="image/png" href= "image/favicon.png">
+        </head>
+	<!--background image-->
+	 <div id = "bg">
+                <img src= "image/bg3.jpg" class="stretch" alt = ""/>
+        </div>
 <body>
 <div class="container">
     <div class="row">
