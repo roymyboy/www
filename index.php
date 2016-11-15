@@ -54,6 +54,7 @@ if (isset($_POST['login'])) {
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
 			<div class="etc-login-form">
 		</fieldset>
+			<span class="text-danger"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 			<p>Forgot Password? <a href="forgotpw.html">click here</a></p>
 			<p>New User? <a href="register.php">create new account</a></p>
 		</div>

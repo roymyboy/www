@@ -21,7 +21,16 @@ if (isset($_POST['signup'])) {
     if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
         $error = true;
         $email_error = "Please Enter Valid Email ID";
-    }
+    } else {
+	//check if user already exists 
+	$query = "SELECT email FROM users WHERE email='$email'";
+	$result = mysql_query($query);
+	$count = mysql_num_rows($result);
+		if($count != 0){
+			$error = true;
+			$email_error = "Provided email already exists";
+		}
+    } 
     if(strlen($password) < 6) {
         $error = true;
         $password_error = "Password must be minimum of 6 characters";
