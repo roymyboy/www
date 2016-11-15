@@ -1,24 +1,4 @@
 <?php
-functionn logged_in_redirect() {
-	if (logged_in() === true){
-		header('Location: about.php');
-		exit();
-		
-		}
-
-
-}
-
-
-
-function protect_page () {
-	if (logged_in() === false){
-		header('Location: protected.php');
-		exit();
-		
-		}
-}
-
 function admin_protect() {
 	global $user_data;
 	if (has_access($user_data['user_id'], 1) === false) {
