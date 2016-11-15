@@ -1,8 +1,13 @@
 <?php
- session_start();
+ <?php
+session_start();
 
-if (session_destroy()){
-  header("Location: index.php");
+if(isset($_SESSION['usr_id'])) {
+    session_destroy();
+    unset($_SESSION['usr_id']);
+    unset($_SESSION['usr_name']);
+    header("Location: index.php");
+} else {
+    header("Location: index.php");
 }
-  exit;
 ?>
