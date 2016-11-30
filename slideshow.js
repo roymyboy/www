@@ -1,53 +1,27 @@
-$(function() {
-  var theImage = $('ul#ss li img');
-  var theWidth = theImage.width();
-  //wrap into mother div
-  $('ul#ss').wrap('<div id="mother" />');
-  //assign height width and overflow hidden to mother
-  $('#mother').css({
-    width: function() {
-      return theWidth;
-    },
-    height: function() {
-      return theImage.height();
-    },
-    position: 'relative',
-    overflow: 'hidden'
-  });
-  //get total of image sizes and set as width for ul 
-  var totalWidth = theImage.length * theWidth;
-  $('ul').css({
-    width: function() {
-      return totalWidth;
-    }
-  });
+$(function () {
 
-  var ss_timer = setInterval(function() {
-    ss_next();
-  }, 3000);
+    /* SET PARAMETERS */
+    var change_img_time     = 5000; 
+    var transition_speed    = 100;
 
-  function ss_next() {
-    var a = $(".active");
-    a.removeClass('active');
+    var simple_slideshow    = $("#bg"),
+        listItems           = simple_slideshow.children('li'),
+        listLen             = listItems.length,
+        i                   = 0,
 
-    if (a.hasClass('last')) {
-      //last element -- loop
-      a.parent('ul').animate({
-        "margin-left": (0)
-      }, 1000);
-      a.siblings(":first").addClass('active');
-    } else {
-      a.parent('ul').animate({
-        "margin-left": (-(a.index() + 1) * theWidth)
-      }, 1000);
-      a.next().addClass('active');
-    }
-  }
+        changeList = function () {
 
-  // Cancel slideshow and move next manually on click
-  $('ul#ss li img').on('click', function() {
-    clearInterval(ss_timer);
-    ss_next();
-  });
+            listItems.eq(i).fadeOut(transition_speed, function () {
+                i += 1;
+                if (i === listLen) {
+                    i = 0;
+                }
+                listItems.eq(i).fadeIn(transition_speed);
+            });
+
+        };
+
+    listItems.not(':first').hide();
+    setInterval(changeList, change_img_time);
 
 });

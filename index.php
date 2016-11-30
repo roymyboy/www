@@ -44,22 +44,10 @@ if (isset($_POST['login'])) {
 
 <!--back ground image-->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<ul id="ss">
-   <div id="bg">
-	<li class="active" >
-		<img src= "image/bg3.jpg" class="stretch" alt = ""/>
-	</li>
-   </div>
-   <div id="bg">
-	<li>
-		<img src= "image/bg4.jpg" class="stretch" alt = ""/>
-	</li>
-   </div>
-   <div id="bg">
-	<li class="last" >
-		<img src= "image/bg1.jpg" class="stretch" alt = ""/>
-	</li>
-   </div>
+<ul id="bg">
+	   <li>	<img src= "image/bg3.jpg" class="stretch" alt = ""/></li>
+	   <li>	<img src= "image/bg4.jpg" class="stretch" alt = ""/></li>
+	   <li>	<img src= "image/bg1.jpg" class="stretch" alt = ""/></li>
 </ul>
 	<!--Login setup-->
    <div class="Container">	
