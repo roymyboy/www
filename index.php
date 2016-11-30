@@ -43,11 +43,9 @@ if (isset($_POST['login'])) {
 	</head>
 
 <!--back ground image-->
-<div id="bg">
-	  <img src= "image/bg3.jpg" class="stretch" alt = ""/>
-	  <img src= "image/bg4.jpg"  alt = ""/>
-	   <img src= "image/bg1.jpg" alt = ""/>
-</div>
+<div id="bg"><img src= "image/bg3.jpg" class="stretch" alt = ""/></div>
+<div id="bg"><img src= "image/bg2.jpg" class="stretch" alt = ""/></div>
+<div id="bg"><img src= "image/bg1.jpg" class="stretch" alt = ""/></div>
 	<!--Login setup-->
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
@@ -71,7 +69,23 @@ if (isset($_POST['login'])) {
 			<p>New User? <a href="register.php">create new account</a></p>
 		</div>
 	</form>
-   </div>	
+   </div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("bg");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}	
+</script>
 </html>
 <?php ob_end_flush(); ?>
 ~         
