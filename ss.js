@@ -1,17 +1,17 @@
 function slideSwitch() {
-    var $active = $('#bg IMG.active');
+    var $active = $('#bg IMG.stretch');
 
     if ( $active.length == 0 ) $active = $('#bg IMG:last');
 
     var $next =  $active.next().length ? $active.next()
         : $('#bg IMG:first');
 
-    $active.addClass('last-active');
+    $active.addClass('last-stretch');
         
     $next.css({opacity: 0.0})
-        .addClass('active')
+        .addClass('stretch')
         .animate({opacity: 1.0}, 1000, function() {
-            $active.removeClass('active last-active');
+            $active.removeClass('stretch last-stretch');
         });
 }
 

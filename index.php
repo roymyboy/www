@@ -45,8 +45,8 @@ if (isset($_POST['login'])) {
 <!--back ground image-->
 <div id="bg">
 	  <img src= "image/bg3.jpg" class="stretch" alt = ""/>
-	  <img src= "image/bg4.jpg" class="stretch" alt = ""/>
-	   <img src= "image/bg1.jpg" class="stretch" alt = ""/>
+	  <img src= "image/bg4.jpg"  alt = ""/>
+	   <img src= "image/bg1.jpg" alt = ""/>
 </div>
 	<!--Login setup-->
    <div class="Container">	
