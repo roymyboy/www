@@ -43,9 +43,9 @@ if (isset($_POST['login'])) {
 	</head>
 <body>
 <!--back ground image-->
-<div id="bg"><img src= "image/bg3.jpg" class="stretch" alt = ""/></div>
-<div id="bg"><img src= "image/bg2.jpg" class="stretch" alt = ""/></div>
-<div id="bg"><img src= "image/bg1.jpg" class="stretch" alt = ""/></div>
+<div id="bg fade"><img src= "image/bg3.jpg" class="stretch" alt = ""/></div>
+<div id="bg fade"><img src= "image/bg2.jpg" class="stretch" alt = ""/></div>
+<div id="bg fade"><img src= "image/bg6.jpg" class="stretch" alt = ""/></div>
 <script>
 var slideIndex = 0;
 showSlides();
