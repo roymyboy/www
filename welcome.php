@@ -113,22 +113,32 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="image/bg1.jpg" style="width:100%">
+  <img src="slideshow/s1.jpg" style="width:100%">
   <div class="text">Caption Text</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="image/bg7.jpg" style="width:100%">
+  <img src="slideshow/s2.jpg" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="image/bg2.jpg" style="width:100%">
+  <img src="slideshow/s3.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="slideshow/s4.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="slideshow/s5.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
 <a class="prev" onclick="plusSlides(-1)">❮</a>
 <a class="next" onclick="plusSlides(1)">❯</a>
 
@@ -169,13 +179,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-
-</body>
-</html> 
-
-
-
-   <body>
       <div class="collapse navbar-collapse" id="navbar1">
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isset($_SESSION['usr_id'])){ ?>
