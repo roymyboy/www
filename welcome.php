@@ -17,7 +17,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 800px;
   position: relative;
   margin: auto;
 }
@@ -27,7 +27,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
+  width: 700px;
   padding: 16px;
   margin-top: -22px;
   color: white;
@@ -112,30 +112,30 @@ body {font-family: Verdana,sans-serif;margin:0}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
+  <div class="numbertext">1 / 5</div>
   <img src="slideshow/s1.jpg" style="width:100%">
   <div class="text">Caption Text</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
+  <div class="numbertext">2 / 5</div>
   <img src="slideshow/s2.jpg" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
+  <div class="numbertext">3 / 5</div>
   <img src="slideshow/s3.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
+  <div class="numbertext">4 / 5</div>
   <img src="slideshow/s4.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
+  <div class="numbertext">5 / 5</div>
   <img src="slideshow/s5.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
@@ -149,6 +149,8 @@ body {font-family: Verdana,sans-serif;margin:0}
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
 </div>
 
 <script>
