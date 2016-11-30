@@ -43,12 +43,11 @@ if (isset($_POST['login'])) {
 	</head>
 
 <!--back ground image-->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<ul id="bg">
-	   <li>	<img src= "image/bg3.jpg" class="stretch" alt = ""/></li>
-	   <li>	<img src= "image/bg4.jpg" class="stretch" alt = ""/></li>
-	   <li>	<img src= "image/bg1.jpg" class="stretch" alt = ""/></li>
-</ul>
+<div id="bg">
+	  <img src= "image/bg3.jpg" class="stretch" alt = ""/>
+	  <img src= "image/bg4.jpg" class="stretch" alt = ""/>
+	   <img src= "image/bg1.jpg" class="stretch" alt = ""/>
+</div>
 	<!--Login setup-->
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
