@@ -41,11 +41,27 @@ if (isset($_POST['login'])) {
 		<link rel = "stylesheet" type="text/css" href="style.css">
 		<link rel = "icon" type ="image/png" href= "image/favicon.png">
 	</head>
-
+<body>
 <!--back ground image-->
 <div id="bg"><img src= "image/bg3.jpg" class="stretch" alt = ""/></div>
 <div id="bg"><img src= "image/bg2.jpg" class="stretch" alt = ""/></div>
 <div id="bg"><img src= "image/bg1.jpg" class="stretch" alt = ""/></div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("bg");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+</script>
+</body>
 	<!--Login setup-->
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
@@ -70,22 +86,6 @@ if (isset($_POST['login'])) {
 		</div>
 	</form>
    </div>
-<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("bg");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex> slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
-}	
-</script>
 </html>
 <?php ob_end_flush(); ?>
 ~         
