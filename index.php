@@ -43,14 +43,14 @@ if (isset($_POST['login'])) {
 	</head>
 
 <!--back ground image-->
-   <div id="slideshow">
-	<div id = "bg">
+   <div id="bg">
+	<div >
 		<img src= "image/bg3.jpg" class="stretch" alt = ""/>
 	</div>
-	<div id = "bg">
+	<div >
 		<img src= "image/bg4.jpg" class="stretch" alt = ""/>
 	</div>
-	<div id = "bg">
+	<div >
 		<img src= "image/bg5.jpg" class="stretch" alt = ""/>
 	</div>
    </div>
