@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
    </div>
    <div id="bg">
 	<li class="last" >
-		<img src= "image/bg5.jpg" class="stretch" alt = ""/>
+		<img src= "image/bg1.jpg" class="stretch" alt = ""/>
 	</li>
    </div>
 </ul>
