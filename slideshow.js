@@ -1,7 +1,7 @@
 $("#bg > div:gt(0)").hide();
 
-setInterval(function {
-	$('#bg > dive:first')
+setInterval(function() {
+	$('#bg > div:first')
 	.fadeOut(1000)
 	.next()
 	.fadeIn(1000)
