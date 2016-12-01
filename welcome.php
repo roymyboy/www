@@ -149,7 +149,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 </div>
 
 <script>
-var slideIndex = 1;
+/**var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -174,9 +174,7 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-} 
-</script>
-<script>
+} **/
 var slideIndex = 0;
 showSlides();
 
