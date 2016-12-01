@@ -64,7 +64,7 @@ if (isset($_POST['login'])) {
 </script>
 		<div class="etc-login-form">
 		</fieldset>
-			<p id= "p-color">Forgot Password? <a id="a-color" href="forgotpw.html">click here</a></p>
+			<p id= "p-color">Forgot Password? <a id="a-color" href="forgotpw.php">click here</a></p>
 			<p id= "p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</div>
 	</form>
