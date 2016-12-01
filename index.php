@@ -53,7 +53,7 @@ if (isset($_POST['login'])) {
 	               <span class="text-danger"> <style= "color:red"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 		<div class="form-group">
 			<label for="email"></label>
-			<input type="email" name="email" placeholder="email@email.com" required class="email">
+			<input type="email" name="email" placeholder="email@email.com" required value="<?php if(isset($errormsg)) echo $enail;?>" class="email">
 		</div>
 		<div class="form-group">
 			<label for="password"></label>
