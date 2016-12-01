@@ -60,20 +60,7 @@ if (isset($_POST['login'])) {
 			<input type="password" name="password" placeholder="password" required class="password">
 		</div>
 		<div class="form-group">
-			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
-<script>
-    var count = 1;
-    function setColor(button, color) {
-        var property = document.getElementById(button);
-        if (count == 0) {
-            property.style.backgroundColor = "#FFFFFF"
-            count = 1;        
-        }
-        else {
-            property.style.backgroundColor = "#7FFF00"
-            count = 0;
-        }
-    }
+			<button type="submit" name= "login" value="Login" onclick="setColor('button', '#101010')" class="btn btn-primary">login</button> </div>
 </script>
 		<div class="etc-login-form">
 		</fieldset>
@@ -82,6 +69,21 @@ if (isset($_POST['login'])) {
 		</div>
 	</form>
    </div>
+<script>
+    var count = 1;
+    function setColor(btn, color) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#FFFFFF"
+            count = 1;
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+</script>
+
 </body>
 </html>
 <?php ob_end_flush(); ?>
