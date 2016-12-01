@@ -108,3 +108,7 @@ form button[type=submit] {
 #a-color{
    color:blue;
 }
+
+button#bgcolor:active{
+	background:red;
+}
