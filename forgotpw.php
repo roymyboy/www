@@ -4,48 +4,7 @@ if(isset($_SESSION['usr_id']) != ""){
 	header("Location:welcome.php");
 }
 include_once 'connect.php';
-$error = false;
-if(isset($_POST['submit'])) 
-{ 
-	$email = $_POST['email']; 
-	$sql= "SELECT  `password` FROM `register` WHERE `email` ='.$email.'"; 
-	$query1 = mysqli_query($sql); 
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-        $error = true;
-        $email_error = "Please Enter Valid Email ID";
-    } else {
-        //check if user already exists 
-        $query = "SELECT email FROM users WHERE email='$email'";
-        $result = mysqli_query($con, $query);
-        $count = mysqli_num_rows($result);
-                if($count == 0){
-                        $error = true;
-                        $email_error = "Provided email doesnot exist.! <a id='a-color' href='register.php'>Register Here</a>";
-                }
-    }
-    if(!$query1)  
-    { 
-        die(mysqli_error()); 
-    } 
-    if(mysqli_affected_rows() != 0) 
-    { 
-	$row=mysqli_fetch_array($query1); 
-	$password=$row["password"]; 
-	$email=$row["email"]; 
-	$subject="Password Request"; 
-	$header="From: Intense_chamber"; 
-	$content="Your password is ".$password; 
-	mail($email, $subject, $content, $header);  
-    	$success = "An email containing the password has been sent to you"; 
-   } 
-   else{ 
-    	$errrno = "no such login in the system. please try again."; 
-   } 
-} else {
-	echo("suhhh! dude");
-}
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
