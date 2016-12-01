@@ -72,7 +72,7 @@ if(isset($_POST['submit']))
 		 <span class="text-success"><?php if (isset($email_error)) { echo $email_error; } ?></span>
 				</div>
 				</div>
-				<button id="bgcolor" type="submit" name="submit"  value="submit">Submit</button>
+				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
 	</fieldset>
 		 <span class="text-success"><?php if (isset($success)) { echo $success; } ?></span>
 
