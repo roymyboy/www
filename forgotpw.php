@@ -2,13 +2,6 @@
 session_start();
 include_once 'connect.php';
 $error = false; 
-if(isset($_POST['submit'])) 
-{ 
-//$email =  mysqli_real_escape_string($con, $_POST['email']);
-$email = $_POST['email'];
-$pass= "SELECT  `password` FROM `users` WHERE `email` ='.$email.'"; 
-$query1 = mysqli_query($pass); 
-
   if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
         $error = true;
         $email_error = "Please Enter Valid Email ID";
@@ -22,26 +15,6 @@ $query1 = mysqli_query($pass);
                         $email_error = "Provided email doesnot exist! Please register here <a id="a-color" href='register.php'>Register</a>";
                 }
     }
-if(!$query1)  
-    { 
-    die(mysqli_error()); 
-    } 
-if(mysqli_affected_rows() != 0) 
-    { 
-$row=mysqli_fetch_array($query1); 
-$pass=$row["password"]; 
-$email=$row["email"]; 
-$subject="Password Request"; 
-$header="From: intense-chamber"; 
-$content="Your password is ".$pass; 
-mail($email, $subject, $content, $header);  
-print "An email containing the password has been sent to you"; 
-    } 
-else  
-    { 
-    echo("no such login in the system. please try again."); 
-    } 
-} 
 ?>
 
 <!DOCTYPE html>
