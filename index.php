@@ -37,6 +37,7 @@ if (isset($_POST['login'])) {
 
 <!DOCTYPE html>
 <html>
+<body>
 	<head>
 		<link rel = "stylesheet" type="text/css" href="style.css">
 		<link rel = "icon" type ="image/png" href= "image/favicon.png">
@@ -60,13 +61,28 @@ if (isset($_POST['login'])) {
 		</div>
 		<div class="form-group">
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
-			<div class="etc-login-form">
+<script>
+    var count = 1;
+    function setColor(button, color) {
+        var property = document.getElementById(button);
+        if (count == 0) {
+            property.style.backgroundColor = "#FFFFFF"
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+</script>
+		<div class="etc-login-form">
 		</fieldset>
 			<p id= "p-color">Forgot Password? <a id="a-color" href="forgotpw.html">click here</a></p>
 			<p id= "p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</div>
 	</form>
    </div>
+</body>
 </html>
 <?php ob_end_flush(); ?>
 ~         
