@@ -42,7 +42,7 @@ if (isset($_POST['login'])) {
 		<link rel = "icon" type ="image/png" href= "image/favicon.png">
 	</head>
 <!--back ground image-->
-<div id="bg"><img src= "image/bg9.jpg" class="stretch" alt = ""/></div>
+<div id="bg"><img src= "image/bg0.jpg" class="stretch" alt = ""/></div>
 	<!--Login setup-->
    <div class="Container">	
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
