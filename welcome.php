@@ -20,7 +20,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   max-width: 800px;
   position: relative;
   margin: auto;
-  height: 700px
+  height: 500px
 }
 
 /* Next & previous buttons */
