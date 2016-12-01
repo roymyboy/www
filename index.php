@@ -48,7 +48,7 @@ if (isset($_POST['login'])) {
 	<form role="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" name= "loginform"> 
 		<fieldset>
 
-			<legend color="white">Login</legend>
+			<legend >Login</legend>
 	               <span class="text-danger"> <style= "color:red"><?php if(isset($errormsg)){echo $errormsg;}?></span>
 		<div class="form-group">
 			<label for="email"></label>
