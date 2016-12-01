@@ -63,7 +63,7 @@ if(isset($_POST['submit']))
 	 		<div class="etc-login-form"><p id="p-color">When you fill in your registered email address, you will be sent instructions on how to reset your password.</p></div>
 				<div class="form-group">
 					<label id="label-text-color" for="email">Email address</label>
-					<input type="email" name="email" placeholder="email@email.com" required class="email"/>
+					<input type="text" name="email" placeholder="email@email.com" required class="email"/>
 				</div>
 			</div>
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
