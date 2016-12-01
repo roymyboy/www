@@ -88,7 +88,7 @@ if (isset($_POST['signup'])) {
                     </div>	
 			<div class="form-group">
 	
-                        <button type="submit" name="signup" value="Sign Up" class="btn btn-primary" />Sign Up</button> </div>
+                        <button id="bgcolor" type="submit" name="signup" value="Sign Up" class="btn btn-primary" />Sign Up</button> </div>
 		<div class= "etc-login-form">
                 </fieldset>
             <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
