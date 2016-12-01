@@ -23,10 +23,10 @@
   <nav id="fixedbar">
     <ul id="fixednav">
       <li><a href="#">Home</a></li>
-      <li><a href="#">Slide Show</a></li>
+      <li><a href="ss.html">Slide Show</a></li>
       <li><a href="#">Setting</a></li>
       <?php if (isset($_SESSION['usr_id'])){ ?>
-      <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+      <li><p class="navbar-text"><?php echo $_SESSION['usr_name']; ?></p></li>
       <li><a href= "logout.php">Sign Out</a> <?php } else { ?>
       <li><a href="index.php">Login</a></li><?php } ?>
       </li>
@@ -37,10 +37,10 @@
     <nav id="navigation">
       <ul>
         <li><a href="#">Homepage</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Settig</a></li>
+        <li><a href="ss.html">Slide Show</a></li>
+        <li><a href="#">Setting</a></li>
       <?php if (isset($_SESSION['usr_id'])){ ?>
-      <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+      <li><p class="navbar-text"> <?php echo $_SESSION['usr_name']; ?></p></li>
       <li><a href= "logout.php">Sign Out</a> <?php } else { ?>
       <li><a href="index.php">Login</a></li><?php } ?>
       </li>
