@@ -70,7 +70,7 @@ if(isset($_POST['submit']))
 				<div class="login-group">
 					<div class="form-group">
 						<label id="label-text-color" class="email">Email address</label>
-						<input type="email" name="email" placeholder="email@email.com" required class="email" value="<?php if(isset($error)) echo $email;?>">
+						<input type="email" name="email" placeholder="email@email.com" required class="email">
 		 <span class="text-success"><?php if (isset($email_error)) { echo $email_error; } ?></span>
 				</div>
 				</div>
