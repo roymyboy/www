@@ -74,7 +74,7 @@ if (isset($_POST['login'])) {
 			<input type="password" name="password" placeholder="password" required class="password">
 		</div>
 		<div class="form-group">
-			<button type="submit" name= "login" value="Login" onclick="setColor('button', '#101010')" class="btn btn-primary">login</button> </div>
+			<button type="submit" name= "login" value="Login" onclick="setColor('button', '#101010')"; class="btn btn-primary">login</button> </div>
 </script>
 		<div class="etc-login-form">
 		</fieldset>
