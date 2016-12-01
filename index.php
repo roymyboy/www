@@ -62,8 +62,8 @@ if (isset($_POST['login'])) {
 			<button type="submit" name= "login" value="Login" class="btn btn-primary">login</button> </div>
 			<div class="etc-login-form">
 		</fieldset>
-			<p id= "p-color">Forgot Password? <a href="forgotpw.html">click here</a></p>
-			<p id= "p-color">New User? <a href="register.php">create new account</a></p>
+			<p id= "p-color">Forgot Password? <a id="a-color" href="forgotpw.html">click here</a></p>
+			<p id= "p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</div>
 	</form>
    </div>

@@ -69,7 +69,7 @@ if (isset($_POST['signup'])) {
                         <span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
                     </div>	
 			<div class="form-group">
-                        <label id="label-tetx-color" for="name">Email</label>
+                        <label id="label-text-color" for="name">Email</label>
                         <input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="email" />
                         <span class="text-danger"><?php if (isset($email_error))echo  $email_error; ?></span>
 
@@ -92,7 +92,7 @@ if (isset($_POST['signup'])) {
 		<div class= "etc-login-form">
                 </fieldset>
             <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
-        	<p id="p-color"> Already Registered? <a href="index.php">Login Here</a></p>
+        	<p id="p-color"> Already Registered? <a id="a-color" href="index.php">Login Here</a></p>
 		</div>
             </form>
             <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
