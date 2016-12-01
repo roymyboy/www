@@ -41,7 +41,9 @@ if(isset($_POST['submit']))
    else{ 
     	$errrno = "no such login in the system. please try again."; 
    } 
-}  
+} else {
+	header("Location:forgotpw.php");
+} 
 ?>
 
 <!DOCTYPE html>
