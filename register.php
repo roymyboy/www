@@ -61,27 +61,27 @@ if (isset($_POST['signup'])) {
 <div class="container">
             <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
                 <fieldset>
-                    <legend>Sign Up</legend>
+                    <legend id="legendcolor">Sign Up</legend>
 
 			<div class="form-group">
-                        <label for="name">Name</label>
+                        <label id="label-text-color" for="name">Name</label>
                         <input type="text" name="name" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
                         <span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
                     </div>	
 			<div class="form-group">
-                        <label for="name">Email</label>
+                        <label id="label-tetx-color" for="name">Email</label>
                         <input type="text" name="email" placeholder="Email" required value="<?php if($error) echo $email; ?>" class="email" />
                         <span class="text-danger"><?php if (isset($email_error))echo  $email_error; ?></span>
 
                     </div>	
 			<div class="form-group">
-                        <label for="name">Password</label>
+                        <label id="label-text-color" for="name">Password</label>
                         <input type="password" name="password" placeholder="Password" required class="password" />
                         <span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
 
                     </div>	
 			<div class="form-group">
-                        <label for="name">Confirm Password</label>
+                        <label id="label-text-color" for="name">Confirm Password</label>
                         <input type="password" name="cpassword" placeholder="Confirm Password" required class="password" />
                         <span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
 
@@ -92,7 +92,7 @@ if (isset($_POST['signup'])) {
 		<div class= "etc-login-form">
                 </fieldset>
             <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
-        	<p> Already Registered? <a href="index.php">Login Here</a></p>
+        	<p id="p-color"> Already Registered? <a href="index.php">Login Here</a></p>
 		</div>
             </form>
             <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
