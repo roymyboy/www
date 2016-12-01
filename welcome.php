@@ -20,6 +20,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   max-width: 800px;
   position: relative;
   margin: auto;
+  height: 700px
 }
 
 /* Next & previous buttons */
@@ -27,7 +28,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: 700px;
+  width: auto;
   padding: 16px;
   margin-top: -22px;
   color: white;
