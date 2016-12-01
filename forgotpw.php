@@ -39,7 +39,7 @@ $subject="Verbazon.net - Password Request";
 $header="From: webmaster@verbazon.net"; 
 $content="Your password is ".$password; 
 mail($email, $subject, $content, $header);  
-print "An email containing the password has been sent to you"; 
+    $success = "An email containing the password has been sent to you"; 
     } 
 else  
     { 
@@ -72,12 +72,14 @@ else
 				<div class="login-group">
 					<div class="form-group">
 						<label id="label-text-color" class="email">Email address</label>
-						<input type="email" name="email" placeholder="email@email.com" required class="email" class="email">
-				<!--		<span class="text-danger"> </span> -->	
+						<input type="email" name="email" placeholder="email@email.com" required class="email" value="<?php if(isset($error)) echo $email;?>"class="email">
+		 <span class="text-success"><?php if (isset($email_error)) { echo $email_error; } ?></span>
 				</div>
 				</div>
 				<button id="bgcolor" type="submit" name="submit"  value="submit">Submit</button>
 	</fieldset>
+		 <span class="text-success"><?php if (isset($success)) { echo $success; } ?></span>
+
 				<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
 				<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</form>
