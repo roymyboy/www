@@ -39,7 +39,7 @@ else
 	</div>
 
 	<div class="container">
-<form role="form" method="post" name="forgotpw">
+<form role="form" method="post" name="forgotpw" action="<?php $_SERVER['PHP_SELF'];?>">
 	<fieldset>
 	<legend id="legendcolor">Forgot Password</legend>
 	<!-- Main Form -->
