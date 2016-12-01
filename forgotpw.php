@@ -39,7 +39,7 @@ else
 	</div>
 
 	<div class="container">
-<form role="form" method="post" name="forgotpw" action="<?php $_SERVER['PHP_SELF'];?>">
+<form role="form" method="post" name="forgotpw" action="<?php echo $_SERVER['PHP_SELF'];?>">
 	<fieldset>
 	<legend id="legendcolor">Forgot Password</legend>
 	<!-- Main Form -->
@@ -55,7 +55,7 @@ else
 						<input type="email" name="email" placeholder="email@email.com" required class="email">
 					</div>
 				</div>
-				<button id="bgcolor" type="submit" name="submit" form="register" value="submit">Submit</button>
+				<button id="bgcolor" type="submit" name="submit"  value="submit">Submit</button>
 	</fieldset>
 				<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
 				<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
