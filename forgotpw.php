@@ -7,15 +7,9 @@ if(isset($_SESSION['usr_id']) != ""){
 $error = false;
 if(isset($_POST['submit'])) 
 { 
-$email = $_POST['email']; 
-$sql= "SELECT  `password` FROM `register` WHERE `email` ='.$email.'"; 
-$query1 = mysqli_query($sql); 
-
- //name can contain only alpha characters and space
-    if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
-        $error = true;
-        $name_error = "Name must contain only alphabets and space";
-    }
+	$email = $_POST['email']; 
+	$sql= "SELECT  `password` FROM `register` WHERE `email` ='.$email.'"; 
+	$query1 = mysqli_query($sql); 
     if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
         $error = true;
         $email_error = "Please Enter Valid Email ID";
@@ -29,25 +23,24 @@ $query1 = mysqli_query($sql);
                         $email_error = "Provided email doesnot exist.! <a id='a-color' href='register.php'>Register Here</a>";
                 }
     }
-if(!$query1)  
+    if(!$query1)  
     { 
-    die(mysqli_error()); 
+        die(mysqli_error()); 
     } 
-if(mysqli_affected_rows() != 0) 
+    if(mysqli_affected_rows() != 0) 
     { 
-$row=mysqli_fetch_array($query1); 
-$password=$row["password"]; 
-$email=$row["email"]; 
-$subject="Verbazon.net - Password Request"; 
-$header="From: webmaster@verbazon.net"; 
-$content="Your password is ".$password; 
-mail($email, $subject, $content, $header);  
-    $success = "An email containing the password has been sent to you"; 
-    } 
-else  
-    { 
-    echo("no such login in the system. please try again."); 
-    } 
+	$row=mysqli_fetch_array($query1); 
+	$password=$row["password"]; 
+	$email=$row["email"]; 
+	$subject="Password Request"; 
+	$header="From: Intense_chamber"; 
+	$content="Your password is ".$password; 
+	mail($email, $subject, $content, $header);  
+    	$success = "An email containing the password has been sent to you"; 
+   } 
+   else{ 
+    	$errrno = "no such login in the system. please try again."; 
+   } 
 }  
 ?>
 
