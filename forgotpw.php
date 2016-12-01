@@ -4,8 +4,9 @@ include_once 'connect.php';
 $error = false; 
 if(isset($_POST['submit'])) 
 { 
-$email =  mysqli_real_escape_string($con, $_POST['email']);
-$pass= "SELECT  `password` FROM `users` WHERE `email` ='$email'"; 
+//$email =  mysqli_real_escape_string($con, $_POST['email']);
+$email = $_POST['email'];
+$pass= "SELECT  `password` FROM `users` WHERE `email` ='.$email.'"; 
 $query1 = mysqli_query($pass); 
 
   if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
@@ -21,9 +22,6 @@ $query1 = mysqli_query($pass);
                         $email_error = "Provided email doesnot exist! Please register here <a id="a-color" href='register.php'>Register</a>";
                 }
     }
-
-
-
 if(!$query1)  
     { 
     die(mysqli_error()); 
