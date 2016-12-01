@@ -56,3 +56,4 @@ $error = false;
 	</div>
 
 </html>
+<?php ob_end_flush(); ?>
