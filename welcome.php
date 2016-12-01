@@ -14,7 +14,7 @@
   <meta name="author" content="Jake Rocheleau">
   <link rel="shortcut icon" href="http://designshack.net/favicon.ico">
   <link rel="icon" href="http://designshack.net/favicon.ico">
-  <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="style.css">
   <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Capriola">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -33,9 +33,7 @@
     </ul>
   </nav>
   
-  <div id="w">
-    <header id="logo"><a href="index.html"><span id="logobg">SomeWebsiteLogo</span></a></header>
-    
+  <div id="w"> 
     <nav id="navigation">
       <ul>
         <li><a href="#">Homepage</a></li>
