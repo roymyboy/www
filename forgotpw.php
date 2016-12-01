@@ -55,7 +55,7 @@ else
 						<input type="email" name="email" placeholder="email@email.com" required class="email">
 					</div>
 				</div>
-				<button id="bgcolor" type="submit" form="register" value="submit">Submit</button>
+				<button id="bgcolor" type="submit" name="submit" form="register" value="submit">Submit</button>
 	</fieldset>
 				<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
 				<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
