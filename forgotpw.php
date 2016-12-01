@@ -5,7 +5,7 @@ $error = false;
 if(isset($_POST['submit'])) 
 { 
 $email =  mysqli_real_escape_string($con, $_POST['email']);
-$pass= "SELECT  `password` FROM `users` WHERE `email` ='$email.'"; 
+$pass= "SELECT  `password` FROM `users` WHERE `email` ='$email'"; 
 $query1 = mysqli_query($pass); 
 
   if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
