@@ -5,8 +5,8 @@ $error = false;
 if(isset($_POST['submit'])) 
 { 
 $email =  mysqli_real_escape_string($con, $_POST['email']);
-$sql= "SELECT  `password` FROM `users` WHERE `email` ='.$email.'"; 
-$query = mysqli_query($sql); 
+$pass= "SELECT  `password` FROM `users` WHERE `email` ='.$email.'"; 
+$query1 = mysqli_query($pass); 
 
   if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
         $error = true;
@@ -30,12 +30,12 @@ if(!$query)
     } 
 if(mysqli_affected_rows() != 0) 
     { 
-$row=mysqli_fetch_array($query); 
-$password=$row["password"]; 
+$row=mysqli_fetch_array($query1); 
+$pass=$row["password"]; 
 $email=$row["email"]; 
 $subject="Password Request"; 
 $header="From: intense-chamber"; 
-$content="Your password is ".$password; 
+$content="Your password is ".$pass; 
 mail($email, $subject, $content, $header);  
 print "An email containing the password has been sent to you"; 
     } 
