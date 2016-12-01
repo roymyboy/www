@@ -56,7 +56,7 @@ if (isset($_POST['signup'])) {
         </head>
 	<!--background image-->
 	 <div id = "bg">
-                <img src= "image/bg3.jpg" class="stretch" alt = ""/>
+                <img src= "image/bg10.jpg" class="stretch" alt = ""/>
         </div>
 <div class="container">
             <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
