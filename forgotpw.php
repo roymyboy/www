@@ -1,9 +1,9 @@
 <?php
 session_start();
-include_once 'connect.php';
 if(isset($_SESSION['usr_id']) != ""){
 	header("Location:welcome.php");
 }
+include_once 'connect.php';
 $error = false;
 if(isset($_POST['forgotpass'])) 
 { 
