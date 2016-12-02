@@ -6,7 +6,7 @@ if(isset($_POST['email']))
             $query = "SELECT id FROM users where email='".$email."'";
   	    $result = mysqli_query($con,$query);
             $Results = mysqli_fetch_array($result);
-            if(count($Results)==1)
+            if(count($Results)!=0)
             {
                 $encrypt = md5(90*13+$Results['id']);
                 $message = "Your password reset link send to your e-mail address.";
