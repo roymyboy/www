@@ -48,12 +48,12 @@ if(isset($_POST['email']))
 	 		<div class="etc-login-form"><p id="p-color">When you fill in your registered email address, you will be sent instructions on how to reset your password.</p></div>
 				<div class="form-group">
 					<label id="label-text-color" for="email">Email address</label>
-					<input type="text" name="email" placeholder="email@email.com" required class="email"/>
-					<span type="text-danger"><?php if(isset($message)) echo $message;?></span>
+					<input type="email" name="email" placeholder="email@email.com" required class="email"/>
 				</div>
 			</div>
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
 		</fieldset>
+			<span type="text-danger"><?php if(isset($message)) echo $message;?></span>
 			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
 			<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</form>
