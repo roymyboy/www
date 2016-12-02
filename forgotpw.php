@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('connect.php');
+include_once 'connect.php';
 if(isset($_POST['action']))
 {          
     if($_POST['action']=="login")
