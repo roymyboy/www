@@ -2,7 +2,7 @@
 session_start();
 include_once 'connect.php';
 
-if($_POST['action']=="password")
+if($_POST['action']=="email")
 {
     $email      = mysqli_real_escape_string($connection,$_POST['email']);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
