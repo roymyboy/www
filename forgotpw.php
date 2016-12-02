@@ -1,59 +1,11 @@
 <?php
 session_start();
 include_once 'connect.php';
-if(isset($_POST['action']))
-{          
-    if($_POST['action']=="login")
-    {
-        $email = mysqli_real_escape_string($con,$_POST['email']);        
-	$password = mysqli_real_escape_string($con,$_POST['password']);
-        $strSQL = mysqli_query($con,"select email from users where email='".$email."' and password='".md5($password)."'");
-        $Results = mysqli_fetch_array($strSQL);
-        if(count($Results)>=1)
-        {
-            $message = $Results['name']." Login Sucessfully!!";
-        }
-        else
-        {
-            $message = "Invalid email or password!!";
-        }
-    }
-    elseif($_POST['action']=="signup")
-    {
-        $name       = mysqli_real_escape_string($con,$_POST['name']);
-        $email      = mysqli_real_escape_string($con,$_POST['email']);
-        $password   = mysqli_real_escape_string($con,$_POST['password']);
-        $query = "SELECT email FROM users where email='".$email."'";
-        $result = mysqli_query($con,$query);
-        $numResults = mysqli_num_rows($result);
-   	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
-        {
-            $message =  "Invalid email address please type a valid email!!";
-        }
-        elseif($numResults>=1)
-        {
-            $message = $email." Email already exist!!";
-        }
-        else
-        {
-            mysqli_query($con,"insert into users(name,email,password) values('".$name."','".$email."','".md5($password)."')");
-            $message = "Signup Sucessfully!!";
-        }
-    }
-    elseif($_POST['action']=="password")
-    {
-        $email      = mysqli_real_escape_string($con,$_POST['email']);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
-        {
-            $message =  "Invalid email address please type a valid email!!";
-        }
-        else
-        {
+if(isset($_POST['email']))
+{           
             $query = "SELECT id FROM users where email='".$email."'";
-
   	    $result = mysqli_query($con,$query);
             $Results = mysqli_fetch_array($result);
-
             if(count($Results)>=1)
             {
                 $encrypt = md5(90*13+$Results['id']);
@@ -78,10 +30,7 @@ if(isset($_POST['action']))
             {
                 $message = "Account not found please signup now!!";
 	     }
-        }
-    }
-}
-                                                      78,1          33%
+}                                                      78,1          33%
 ?>
 <html>
 	<head>
