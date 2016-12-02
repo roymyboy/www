@@ -175,8 +175,7 @@ function showSlides() {
       <div class="collapse navbar-collapse" id="navbar1">
             <ul class="nav navbar-nav navbar-right">
                 <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
-                <li><a href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); 
-		echo("Please login"); ?>
+                <li><a href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
 		<?php } ?>
 	    </li></ul>
       </div>
