@@ -3,7 +3,7 @@ session_start();
 include_once 'connect.php';
 if(isset($_POST['email']))
 {           
-            $query = "SELECT id FROM users where email='".$email."'";
+            $query = "SELECT password FROM users where email='".$email."'";
   	    $result = mysqli_query($con,$query);
             $Results = mysqli_fetch_array($result);
             if(count($Results)!=0)
