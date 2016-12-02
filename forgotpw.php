@@ -28,7 +28,7 @@ if(isset($_POST['email']))
             }
             else
             {
-                $message = "Account not found please signup now!!";
+                $message = "Account not found please register now!!<a id='a-color' href='register.php'>Register</a> ";
 	     }
 }                 
 ?>
@@ -49,6 +49,7 @@ if(isset($_POST['email']))
 				<div class="form-group">
 					<label id="label-text-color" for="email">Email address</label>
 					<input type="text" name="email" placeholder="email@email.com" required class="email"/>
+					<span type="text-danger"><?php if(isset($message)) echo $message;?></span>
 				</div>
 			</div>
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
