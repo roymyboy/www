@@ -6,7 +6,7 @@ if(isset($_POST['email']))
             $query = "SELECT id FROM users where email='".$email."'";
   	    $result = mysqli_query($con,$query);
             $Results = mysqli_fetch_array($result);
-            if(count($Results)>=1)
+            if(count($Results)=1)
             {
                 $encrypt = md5(90*13+$Results['id']);
                 $message = "Your password reset link send to your e-mail address.";
@@ -17,7 +17,7 @@ if(isset($_POST['email']))
                 $headers = "From: " . strip_tags($from) . "\r\n";
                 $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
-                $headers .= "Content-Type: text/html;
+                $headers .= "Content-Type: text/html";
 
                 mail($to,$subject,$body,$headers);
 
@@ -30,7 +30,7 @@ if(isset($_POST['email']))
             {
                 $message = "Account not found please signup now!!";
 	     }
-}                                                      78,1          33%
+}                 
 ?>
 <html>
 	<head>
