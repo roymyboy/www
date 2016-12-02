@@ -1,11 +1,11 @@
 <?php
-include('connect.php');
+session_start();
+include_once('connect.php');
 if(isset($_POST['action']))
 {          
     if($_POST['action']=="login")
     {
-        $email = mysqli_real_escape_string($connection,$_POST['email']);
-        $password = mysqli_real_escape_string($connection,$_POST['password']);
+        $email = mysqli_real_escape_string($connection,$_POST['email']);        $password = mysqli_real_escape_string($connection,$_POST['password']);
         $strSQL = mysqli_query($connection,"select name from users where email='".$email."' and password='".md5($password)."'");
         $Results = mysqli_fetch_array($strSQL);
         if(count($Results)>=1)
@@ -15,7 +15,7 @@ if(isset($_POST['action']))
         else
         {
             $message = "Invalid email or password!!";
-        }        
+        }
     }
     elseif($_POST['action']=="signup")
     {
@@ -25,7 +25,7 @@ if(isset($_POST['action']))
         $query = "SELECT email FROM users where email='".$email."'";
         $result = mysqli_query($connection,$query);
         $numResults = mysqli_num_rows($result);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
+   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) // Validate email address
         {
             $message =  "Invalid email address please type a valid email!!";
         }
@@ -49,9 +49,10 @@ if(isset($_POST['action']))
         else
         {
             $query = "SELECT id FROM users where email='".$email."'";
-            $result = mysqli_query($connection,$query);
+
+  $result = mysqli_query($connection,$query);
             $Results = mysqli_fetch_array($result);
-            
+
             if(count($Results)>=1)
             {
                 $encrypt = md5(90*13+$Results['id']);
@@ -64,115 +65,50 @@ if(isset($_POST['action']))
                 $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                
+
                 mail($to,$subject,$body,$headers);
-                
-                //$query = "SELECT id FROM users where md5(90*13+id)='".$encrypt."'";
-//                $Results = mysqli_fetch_array($result);
-//                print_r($Results);
-//                $message = $encrypt. $query;
+
+                $query = "SELECT id FROM users where md5(90*13+id)='".$encrypt."'";
+               $Results = mysqli_fetch_array($result);
+                print_r($Results);
+                $message = $encrypt. $query;
             }
             else
             {
                 $message = "Account not found please signup now!!";
-            }
+	     }
         }
     }
 }
-
-
-$content ='<script type="text/javascript" src="jquery-1.8.0.min.js"></script> 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script type="text/javascript">
-function forgetpassword() {
-  $("#login").hide();
-  $("#passwd").show();
-}
-</script>
-<style type="text/css">
-input[type=text]
-{
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  width:200px;
-  min-height: 28px;
-  padding: 4px 20px 4px 8px;
-  font-size: 12px;
-  -moz-transition: all .2s linear;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
-}
-input[type=text]:focus
-{
-  width: 400px;
-  border-color: #51a7e8;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
-  outline: none;
-}
-input[type=password]
-{
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  width:200px;
-  min-height: 28px;
-  padding: 4px 20px 4px 8px;
-  font-size: 12px;
-  -moz-transition: all .2s linear;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
-}
-input[type=password]:focus
-{
-  width: 400px;
-  border-color: #51a7e8;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
-  outline: none;
-}
-</style>  
-  <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
-  </script>
-</head>
-<body>
- <b>'.$message.'</b>
-<div id="tabs" style="width: 480px;">
-  <ul>
-    <li><a href="#tabs-1">Login</a></li>
-    <li><a href="#tabs-2" class="active">Signup</a></li>
-    
-  </ul>                 
-  <div id="tabs-1">
-  <form action="" method="post" id="login">
-    <p><input id="email" name="email" type="text" placeholder="Email"></p>
-    <p><input id="password" name="password" type="password" placeholder="Password">
-    <input name="action" type="hidden" value="login" /></p>
-    <p><input type="submit" value="Login" />&nbsp;&nbsp;<a href="#forget" onclick="forgetpassword();" id="forget">Forget Password?</a></p>
-  </form>
-  <form action="" method="post" id="passwd" style="display:none;">
-    <p><input id="email" name="email" type="text" placeholder="Email to get Password"></p>
-    <input name="action" type="hidden" value="password" /></p>
-    <p><input type="submit" value="Reset Password" /></p>
-  </form>
-  </div>
-  <div id="tabs-2">
-    <form action="" method="post">
-    <p><input id="name" name="name" type="text" placeholder="Name"></p>
-    <p><input id="email" name="email" type="text" placeholder="Email"></p>
-    <p><input id="password" name="password" type="password" placeholder="Password">
-    <input name="action" type="hidden" value="signup" /></p>
-    <p><input type="submit" value="Signup" /></p>
-  </form>
-  </div>
-</div>';
-
-
-$pre = 1;
-$title = "How to create Login and Signup form in PHP";
-$heading = "How to create Login and Signup form in PHP.";
-include("html.inc");            
+                                                      78,1          33%
 ?>
+<html>
+	<head>
+		<link rel = "stylesheet" type="text/css" href="style.css">
+		 <link rel = "icon" type ="image/png" href= "image/favicon.png">
+	</head>
+	<div id="bg"><img src="image/bg10.jpg" class="stretch" alt=""/></div>
+
+	<div class="container">
+		<form role="form" method="post" name="forgotpw" action="<?php echo $_SERVER['PHP_SELF'];?>">
+		<fieldset>
+			<legend id="legendcolor">Forgot Password</legend>
+			<!-- Main Form -->
+	     	<div class="login-form-1">
+	 		<div class="etc-login-form"><p id="p-color">When you fill in your registered email address, you will be sent instructions on how to reset your password.</p></div>
+				<div class="form-group">
+					<label id="label-text-color" for="email">Email address</label>
+					<input type="text" name="email" placeholder="email@email.com" required class="email"/>
+				</div>
+			</div>
+				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
+		</fieldset>
+			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
+			<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
+		</form>
+		</div>
+	<!-- end:Main Form -->
+	</div>
+
+</html>
+<?php ob_end_flush(); ?>
