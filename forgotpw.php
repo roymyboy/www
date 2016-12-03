@@ -20,7 +20,7 @@ if(isset($_POST['email']))
                 $headers .= "Content-Type: text/html";
 		$message = "suhh dude";
                 mail($to,$subject,$body,$headers);
-
+		echo"mail sent";
               //  $query = "SELECT id FROM users where md5(90*13+id)='".$encrypt."'";
              //  $Results = mysqli_fetch_array($result);
               //  print_r($Results);
