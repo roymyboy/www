@@ -6,8 +6,8 @@ if(isset($_POST['email']))
             $query = "SELECT password FROM users where email='".$email."'";
   	    $result = mysqli_query($con,$query);
             $Results = mysqli_fetch_array($result);
-            if(count($Results)!=0)
-            {
+          // if(count($Results)!=0)
+           // {
                 $encrypt = md5(90*13+$Results['id']);
                 $message = "Your password reset link send to your e-mail address.";
                 $to=$email;
@@ -25,11 +25,12 @@ if(isset($_POST['email']))
                $Results = mysqli_fetch_array($result);
                 print_r($Results);
                 $message = $encrypt. $query;
-            }
-            else
+           // } 
+           
+	    /** else
             {
                 $message = "Account not found please register now!!<a id='a-color' href='register.php'>Register</a> ";
-	     }
+	     } **/
 }                 
 ?>
 <html>
