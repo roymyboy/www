@@ -13,10 +13,10 @@ if(isset($_POST['email']))
                 $to=$email;
                 $subject="Forget Password";
                 $from = 'info@phpgang.com';
-                $body='Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password http://demo.phpgang.com/login-signup-in-php/reset.php?encrypt='.$encrypt.'&action=reset   <br/> <br/>--<br>PHPGang.com<br>Solve your problems.';
-                $headers = "From: " . strip_tags($from) . "\r\n";
-                $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
-                $headers .= "MIME-Version: 1.0\r\n";
+                $body='Hi, <br/> <br/>Your Membership ID is '.$Results['id'].;
+        //        $headers = "From: " . strip_tags($from) . "\r\n";
+          //      $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+            //    $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html";
 	//	$message = "suhh dude";
      		$retval = mail($to,$subject,$body,$headers);
