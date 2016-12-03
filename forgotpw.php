@@ -13,7 +13,7 @@ if(isset($_POST['email']))
                 $to=$email;
                 $subject="Forget Password";
                 $from = 'info@phpgang.com';
-                $body='Hi, <br/> <br/>Your Membership ID is '.$Results['id'].;
+                $body="hi";
         //        $headers = "From: " . strip_tags($from) . "\r\n";
           //      $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
             //    $headers .= "MIME-Version: 1.0\r\n";
