@@ -18,13 +18,13 @@ if(isset($_POST['email']))
                 $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html";
-
+		$message = "suhh dude";
                 mail($to,$subject,$body,$headers);
 
-                $query = "SELECT id FROM users where md5(90*13+id)='".$encrypt."'";
-               $Results = mysqli_fetch_array($result);
-                print_r($Results);
-                $message = $encrypt. $query;
+              //  $query = "SELECT id FROM users where md5(90*13+id)='".$encrypt."'";
+             //  $Results = mysqli_fetch_array($result);
+              //  print_r($Results);
+              //  $message = $encrypt. $query;
            // } 
            
 	    /** else
