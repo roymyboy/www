@@ -1,9 +1,9 @@
 <?php
 session_start();
 include "connect.php";
-f (isset($_POST['username'])){
-	$username = $_POST['username'];
-	$query="SELECT * FROM `users` WHERE username='$username'";
+f (isset($_POST['email'])){
+	$username = $_POST['email'];
+	$query="SELECT * FROM `users` WHERE email='$email'";
 	$result   = mysqli_query($con, $query) or die(mysqli_error($con));
 	$count=mysqli_num_rows($result);
 	// If the count is equal to one, we will send message other wise display an error message.
