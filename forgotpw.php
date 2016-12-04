@@ -74,6 +74,7 @@ if (isset($_POST['email'])){
 			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
 			<span type="text-danger"><?php if(isset($count)) echo $count ;?></span>
 			<span type="text-danger"><?php if(isset($pass)) echo $pass ;?></span>
+			<span type="text-danger"><?php if(isset($body)) echo $body ;?></span>
 			<span type="text-danger"><?php if(isset($to)) echo $to ;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
 			<span type="text-danger"><?php if(isset($nmsg)) echo $nmsg;?></span>
