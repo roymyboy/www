@@ -9,7 +9,7 @@ if (isset($_POST['email'])){
 	// If the count is equal to one, we will send message other wise display an error message.
 	if($count==1)
 	{
-		$rows=mysqli_fetch_array($result);
+/**		$rows=mysqli_fetch_array($result);
 		$pass  =  $rows['password'];//FETCHING PASS
 		//echo "your pass is ::".($pass)."";
 		$to = $rows['email'];
@@ -31,7 +31,21 @@ if (isset($_POST['email'])){
 		$headers1 .= "X-Priority: 1\r\n";
 		$headers1 .= "X-MSMail-Priority: High\r\n";
 		$headers1 .= "X-Mailer: Just My Server\r\n";
-		$sentmail = mail ( $to, $subject, $body, $headers1 );
+		$sentmail = mail ( $to, $subject, $body, $headers1 ); **/
+		$encrypt = md5(90*13+$Results['id']);
+                $message = "Your password reset link send to your e-mail address.";
+                $to=$email;
+                $subject="Forget Password";
+                $from = 'utsavroy8@gmail.com';
+                $body='Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password http://demo.phpgang.com/login-signup-in-php/reset.php?encrypt='.$encrypt.'&action=reset   <br/> <br/>--<br>PHPGang.com<br>Solve your problems.';
+                $headers = "From: " . strip_tags($from) . "\r\n";
+                $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+                $headers .= "MIME-Version: 1.0\r\n";
+                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+                mail($to,$subject,$body,$headers);
+
+
 	} else {
 	if ($_POST ['email'] != "") {
 	    $fmsg = "Not found your email in our database";
@@ -73,7 +87,7 @@ if (isset($_POST['email'])){
 		</fieldset>
 			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
 			<span type="text-danger"><?php if(isset($count)) echo $count ;?></span>
-			<span type="text-danger"><?php if(isset($sentmail)) echo $sentmail ;?></span>
+			<span type="text-danger"><?php if(isset($body)) echo $body ;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
 			<span type="text-danger"><?php if(isset($nmsg)) echo $nmsg;?></span>
 			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
