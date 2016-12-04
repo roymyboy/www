@@ -32,12 +32,12 @@ if (isset($_POST['email'])){
 		$headers1 .= "X-MSMail-Priority: High\r\n";
 		$headers1 .= "X-Mailer: Just My Server\r\n";
 		$sentmail = mail ( $to, $subject, $body, $headers1 ); **/
-		$encrypt = md5(90*13+$Results['id']);
+		$encrypt = md5(90*13+$results['id']);
                 $message = "Your password reset link send to your e-mail address.";
                 $to=$email;
                 $subject="Forget Password";
                 $from = 'utsavroy8@gmail.com';
-                $body='Hi, <br/> <br/>Your Membership ID is '.$Results['id'].' <br><br>Click here to reset your password http://demo.phpgang.com/login-signup-in-php/reset.php?encrypt='.$encrypt.'&action=reset   <br/> <br/>--<br>PHPGang.com<br>Solve your problems.';
+                $body='Hi, <br/> <br/>Your email is '.$esults['id'].' <br><br>Click here to reset your password http://demo.phpgang.com/login-signup-in-php/reset.php?encrypt='.$encrypt.'&action=reset   <br/> <br/>--<br>PHPGang.com<br>Solve your problems.';
                 $headers = "From: " . strip_tags($from) . "\r\n";
                 $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
@@ -86,7 +86,7 @@ if (isset($_POST['email'])){
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
 		</fieldset>
 			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
-			<span type="text-danger"><?php if(isset($count)) echo $count ;?></span>
+			<span type="text-danger"><?php if(isset($headers)) echo $headers ;?></span>
 			<span type="text-danger"><?php if(isset($body)) echo $body ;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
 			<span type="text-danger"><?php if(isset($nmsg)) echo $nmsg;?></span>
@@ -97,5 +97,5 @@ if (isset($_POST['email'])){
 	<!-- end:Main Form -->
 	</div>
 
-</html>
+</html>i
 <?php ob_end_flush(); ?>
