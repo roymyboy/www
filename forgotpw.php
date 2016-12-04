@@ -24,7 +24,7 @@ if (isset($_POST['email'])){
 		Here is your password  : $pass;
 		Sincerely,
 		Coding Cyber";
-		$from = "Your-email-address@domaindotcom";
+		$from = "utsavroy8@gmail.com";
 		$subject = "CodingCyber Password recovered";
 		$headers1 = "From: $from\n";
 		$headers1 .= "Content-type: text/html;charset=iso-8859-1\r\n";
