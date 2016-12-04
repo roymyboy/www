@@ -73,7 +73,6 @@ if (isset($_POST['email'])){
 		</fieldset>
 			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
 			<span type="text-danger"><?php if(isset($count)) echo $count ;?></span>
-			<span type="text-danger"><?php if(isset($rows)) echo $rows ;?></span>
 			<span type="text-danger"><?php if(isset($pass)) echo $pass ;?></span>
 			<span type="text-danger"><?php if(isset($to)) echo $to ;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
