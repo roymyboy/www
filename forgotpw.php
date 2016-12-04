@@ -72,6 +72,7 @@ if (isset($_POST['email'])){
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
 		</fieldset>
 			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
+			<span type="text-danger"><?php if(isset($count)) echo $count;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
 			<span type="text-danger"><?php if(isset($nmsg)) echo $nmsg;?></span>
 			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
