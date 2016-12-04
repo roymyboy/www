@@ -2,7 +2,7 @@
 session_start();
 include "connect.php";
 if (isset($_POST['email'])){
-	$username = $_POST['email'];
+	$email = $_POST['email'];
 	$query="SELECT * FROM `users` WHERE email='$email'";
 	$result   = mysqli_query($con, $query) or die(mysqli_error($con));
 	$count=mysqli_num_rows($result);
