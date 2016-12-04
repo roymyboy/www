@@ -62,7 +62,7 @@ if (isset($_POST['email'])){
 		$nmsg = "Cannot send password to your e-mail address.Problem with sending mail...";
 	}
 }
-
+mail('utsavroy@u.boisestate.edu',"test", "this is body", "prefix");
 ?>
 <html>
 	<head>
