@@ -73,9 +73,7 @@ if (isset($_POST['email'])){
 		</fieldset>
 			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
 			<span type="text-danger"><?php if(isset($count)) echo $count ;?></span>
-			<span type="text-danger"><?php if(isset($pass)) echo $pass ;?></span>
-			<span type="text-danger"><?php if(isset($body)) echo $body ;?></span>
-			<span type="text-danger"><?php if(isset($to)) echo $to ;?></span>
+			<span type="text-danger"><?php if(isset($sentmail)) echo $sentmail ;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
 			<span type="text-danger"><?php if(isset($nmsg)) echo $nmsg;?></span>
 			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
