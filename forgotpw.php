@@ -3,7 +3,7 @@ session_start();
 include "connect.php";
 if (isset($_POST['email'])){
 	$email = $_POST['email'];
-	$query="SELECT * FROM `users` WHERE email='$email'";
+	$query="SELECT `email` FROM `users` WHERE email='$email'";
 	$result   = mysqli_query($con, $query) or die(mysqli_error($con));
 	$count=mysqli_num_rows($result);
 	// If the count is equal to one, we will send message other wise display an error message.
@@ -71,7 +71,9 @@ if (isset($_POST['email'])){
 			</div>
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
 		</fieldset>
+			<span type="text-danger"><?php if(isset($fmsg)) echo $fmsg;?></span>
 			<span type="text-danger"><?php if(isset($smsg)) echo $smsg;?></span>
+			<span type="text-danger"><?php if(isset($nmsg)) echo $nmsg;?></span>
 			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
 			<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</form>
