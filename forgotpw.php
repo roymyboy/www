@@ -32,7 +32,7 @@ if (isset($_POST['email'])){
 		$headers1 .= "X-MSMail-Priority: High\r\n";
 		$headers1 .= "X-Mailer: Just My Server\r\n";
 		$sentmail = mail ( $to, $subject, $body, $headers1 ); **/
-	//	$encrypt = md5(90*13+$result['id']);
+		$encrypt = md5(90*13+$result['id']);
                 $message = "Your password reset link send to your e-mail address.";
                 $to=$email;
                 $subject="Forget Password";
@@ -43,7 +43,7 @@ if (isset($_POST['email'])){
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-                mail($to,$subject,$body,$headers);
+             $sentmail =    mail($to,$subject,$body,$headers);
 
 
 	} else {
@@ -52,7 +52,7 @@ if (isset($_POST['email'])){
 		}
 		}
 	//If the message is sent successfully, display sucess message otherwise display an error message.
-	if($mail==1)
+	if($sentmail==1)
 	{
 		$smsg = "Your Password Has Been Sent To Your Email Address.";
 	}
