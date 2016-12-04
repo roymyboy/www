@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "connect.php";
-f (isset($_POST['email'])){
+if (isset($_POST['email'])){
 	$username = $_POST['email'];
 	$query="SELECT * FROM `users` WHERE email='$email'";
 	$result   = mysqli_query($con, $query) or die(mysqli_error($con));
