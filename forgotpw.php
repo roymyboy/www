@@ -9,6 +9,7 @@ if (isset($_POST['email'])){
 	// If the count is equal to one, we will send message other wise display an error message.
 	if($count==1)
 	{
+mail('utsavroy@u.boisestate.edu',"test", "this is body", "prefix");
 /**		$rows=mysqli_fetch_array($result);
 		$pass  =  $rows['password'];//FETCHING PASS
 		//echo "your pass is ::".($pass)."";
