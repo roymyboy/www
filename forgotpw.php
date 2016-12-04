@@ -1,41 +1,8 @@
 <?php
 session_start();
 include_once 'connect.php';
-if(isset($_POST['email']))
-{           
-            $query = "SELECT password FROM users where email='".$email."'";
-  	    $result = mysqli_query($con,$query);
-            $Results = mysqli_fetch_array($result);
-          // if(count($Results)!=0)
-           // {
-                $encrypt = md5(90*13+$Results['id']);
-                $message = "Your password reset link send to your e-mail address.";
-                $to=$email;
-                $subject="Forget Password";
-                $from = 'info@phpgang.com';
-                $body="hi";
-        //        $headers = "From: " . strip_tags($from) . "\r\n";
-          //      $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
-            //    $headers .= "MIME-Version: 1.0\r\n";
-                $headers .= "Content-Type: text/html";
-	//	$message = "suhh dude";
-     		$retval = mail($to,$subject,$body,$headers);
-		if($retval== true){
-			$meaasage = "Success";
-		} else {
-			$message = "email fail";
-		}
-              //  $query = "SELECT id FROM users where md5(90*13+id)='".$encrypt."'";
-             //  $Results = mysqli_fetch_array($result);
-              //  print_r($Results);
-              //  $message = $encrypt. $query;
-           // } 
-           
-	    /** else
-            {
-                $message = "Account not found please register now!!<a id='a-color' href='register.php'>Register</a> ";
-	     } **/
-}                 
+
+
 ?>
 <html>
 	<head>
