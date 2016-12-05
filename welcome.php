@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 		<div id = "bg">	
-			<img src="image/bg4.jpg" class="stretch" alt =""/>
+			<img src="image/bg3.jpg" class="stretch" alt =""/>
 		</div>
 <div class="container">	
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:helvetica, arial, verdana, sans-serif">
