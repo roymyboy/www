@@ -13,7 +13,7 @@ if (!isset($_FILES['image']['tmp_name'])) {
 			$caption=$_POST['caption'];
 			
 			$save=mysql_query("INSERT INTO photos (location, caption) VALUES ('$location','$caption')");
-			header("location: index.php");
+			header("location: welcome.php");
 			exit();					
 	}
 ?>
