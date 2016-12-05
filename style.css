@@ -52,6 +52,22 @@ form {
   border-bottom-color: rgba(60,60,60,.4);
   border-right-color: rgba(60,60,60,.4);
 }
+#form1 {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  margin: auto;
+  background: rgba(130,130,130,.3);
+  padding: 20px 22px;
+  border: 1px solid;
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+}
 
 form input, form button {
   width: 212px;

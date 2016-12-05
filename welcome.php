@@ -296,7 +296,7 @@ height: 225px;
 }
 -->
 </style>
-<form action="addexec.php" method="post" enctype="multipart/form-data" name="addroom">
+<form id="form1" action="addexec.php" method="post" enctype="multipart/form-data" name="addroom">
  Select Image: <br />
  <input type="file" name="image" class="ed"><br />
  Caption<br />
