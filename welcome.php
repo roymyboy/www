@@ -240,6 +240,13 @@
         <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
         <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
     </div>
+<div class="collapse navbar-collapse" id="navbar1">
+   <ul class="nav navbar-nav navbar-right">
+   <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+   <li><a href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
+<?php } ?>
+    </li></ul>
+</div>
     <!-- #endregion Jssor Slider End -->
     <!--#image uploader-->
 	<style type="text/css">
@@ -306,12 +313,5 @@ echo '<p id="caption">'.$row['caption'].' </p>';
 echo '</div>';
 }
 ?>
-<div class="collapse navbar-collapse" id="navbar1">
-   <ul class="nav navbar-nav navbar-right">
-   <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
-   <li><a href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
-<?php } ?>
-    </li></ul>
-</div>
    </body>
 </html>
