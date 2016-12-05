@@ -6,7 +6,7 @@
                 <?php if (isset($_SESSION['usr_id'])){ ?>
 <!DOCTYPE html>
 <head>
-    <link rel = "stylesheet" type="text/class" href="style.css">
+    <link rel = "stylesheet" type="text/css" href="style.css">
     <link rel = "icon" type="image/png" href="image/favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
