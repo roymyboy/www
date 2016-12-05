@@ -7,7 +7,8 @@ if (isset($_POST['email'])){
 	$result   = mysqli_query($con, $query) or die(mysqli_error($con));
 	$count=mysqli_num_rows($result);
 	// If the count is equal to one, we will send message other wise display an error message.
-	$to = "cannot send email";
+	$to = "cannot send email"; 
+}
 ?>
 <html>
 	<head>
