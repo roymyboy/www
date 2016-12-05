@@ -179,54 +179,6 @@
                 <img data-u="image" src="img/12.jpg" />
                 <img data-u="thumb" src="img/thumb-12.jpg" />
             </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/13.jpg" />
-                <img data-u="thumb" src="img/thumb-13.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/14.jpg" />
-                <img data-u="thumb" src="img/thumb-14.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/15.jpg" />
-                <img data-u="thumb" src="img/thumb-15.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/16.jpg" />
-                <img data-u="thumb" src="img/thumb-16.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/17.jpg" />
-                <img data-u="thumb" src="img/thumb-17.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/19.jpg" />
-                <img data-u="thumb" src="img/thumb-19.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/20.jpg" />
-                <img data-u="thumb" src="img/thumb-20.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/21.jpg" />
-                <img data-u="thumb" src="img/thumb-21.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/22.jpg" />
-                <img data-u="thumb" src="img/thumb-22.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/23.jpg" />
-                <img data-u="thumb" src="img/thumb-23.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/24.jpg" />
-                <img data-u="thumb" src="img/thumb-24.jpg" />
-            </div>
-            <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="img/25.jpg" />
-                <img data-u="thumb" src="img/thumb-25.jpg" />
-            </div>
         </div>
         <!-- Thumbnail Navigator -->
         <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
@@ -315,8 +267,8 @@ echo '</div>';
 }
 ?>
 
-	<div class="collapse navbar-collapse" id="navbar1">
-   		<li><p id="p-color" class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+	<div class="collapse navbar-collapse" id="settingup">
+   		<li><p id="p-color">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
    		<li><a id = "a-color" href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
 		<?php } ?></li>
 	</div>

@@ -54,7 +54,7 @@ form {
 }
 #form1 {
   position: fixed;
-  top: 85%;
+  top: 83%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
@@ -131,3 +131,10 @@ a#a-color:active{
 button#bgcolor:active{
 	background:red;
 }
+
+#settingup{	
+  position: fixed;
+  top: 0%;
+  left: 95%;
+}
+
