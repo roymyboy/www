@@ -4,6 +4,9 @@
 ?>
 <html>
                 <?php if (isset($_SESSION['usr_id'])){ ?>
+		<div id = "bg">
+			<img src="image/bg0.jpg" class="stretch" alt =""/>
+		</div>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -299,9 +302,6 @@ height: 225px;
  <br />
  <input type="submit" name="Submit" value="Upload" id="button1" />
  </form>
-<br />
-Photo Archieve
-<br />
 <br />
 <?php
 $result = mysqli_query("SELECT * FROM photos");
