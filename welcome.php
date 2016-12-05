@@ -4,15 +4,17 @@
 ?>
 <html>
                 <?php if (isset($_SESSION['usr_id'])){ ?>
-		<div id = "bg">
-			<img src="image/bg0.jpg" class="stretch" alt =""/>
-		</div>
 <!DOCTYPE html>
 <head>
+    <link rel = "stylesheet" type="text/class" href="style.css">
+    <link rel = "icon" type="image/png" href="image/favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
+		<div id = "bg">	
+			<img src="image/bg0.jpg" class="stretch" alt =""/>
+		</div>
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:helvetica, arial, verdana, sans-serif">
 
     <!-- #region Jssor Slider Begin -->
