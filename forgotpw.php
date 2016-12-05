@@ -1,6 +1,5 @@
 <?php
 session_start();
-require("sendgrid-php/sendgrid-php.php");
 include "connect.php";
 if (isset($_POST['email'])){
 	$email = $_POST['email'];
@@ -10,19 +9,7 @@ if (isset($_POST['email'])){
 	// If the count is equal to one, we will send message other wise display an error message.
 	if($count==1)
 	{
-		$from = new SendGrid\Email(null, "test@example.com");
-		$subject = "Hello World from the SendGrid PHP Library!";
-		$to = new SendGrid\Email(null, $email);
-		$content = new SendGrid\Content("text/plain", "Hello, Email!");
-		$mail = new SendGrid\Mail($from, $subject, $to, $content);
-
-		$apiKey = getenv('SENDGRID_API_KEY');
-		$sg = new \SendGrid($apiKey);
-
-		$response = $sg->client->mail()->send()->post($mail);
-		echo $response->statusCode();
-		echo $response->headers();
-		echo $response->body();
+		$to = "Cannot send email";
 	}
 ?>
 <html>
