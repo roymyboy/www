@@ -9,7 +9,7 @@ if (isset($_POST['email'])){
 	// If the count is equal to one, we will send message other wise display an error message.
 	if($count==1)
 	{
-		$to = "Cannot send email";
+	//	$to = "Cannot send email";
 	}
 ?>
 <html>
