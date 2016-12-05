@@ -10,11 +10,10 @@
     <link rel = "icon" type="image/png" href="image/favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
 </head>
 		<div id = "bg">	
 			<img src="image/bg0.jpg" class="stretch" alt =""/>
-		</div>
+<div class="container">		</div>
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:helvetica, arial, verdana, sans-serif">
 
     <!-- #region Jssor Slider Begin -->
@@ -315,6 +314,7 @@ echo '</div>';
    <li><a id = "a-color" href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
 <?php } ?>
     </li></ul>
+</div>
 </div>
     <!-- #endregion Jssor Slider End -->
    </body>
