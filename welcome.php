@@ -284,6 +284,12 @@ text-indent: 0;
 #caption{
 margin-top: 5px;
 }
+#caption1{
+color:white;
+}
+#form1{
+color:white;
+}
 img{
 height: 225px;
 }
@@ -291,7 +297,7 @@ height: 225px;
 </style>
 <form id="form1" action="addexec.php" method="post" enctype="multipart/form-data" name="addroom">
  Select Image: <br />
- <input type="file" name="image" class="ed"><br />
+ <input id="caption1" type="file" name="image" class="ed"><br />
  Caption<br />
  <input name="caption" type="text" class="ed" id="brnu" />
  <br />
@@ -309,13 +315,11 @@ echo '</div>';
 }
 ?>
 
-<div class="collapse navbar-collapse" id="navbar1">
-   <ul class="nav navbar-nav navbar-right">
-   <li><p id="p-color" class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
-   <li><a id = "a-color" href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
-<?php } ?>
-    </li></ul>
-</div>
+	<div class="collapse navbar-collapse" id="navbar1">
+   		<li><p id="p-color" class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+   		<li><a id = "a-color" href= "logout.php">Sign Out</a> <?php } else { header("Location:index.php"); ?>
+		<?php } ?></li>
+	</div>
 </div>
     <!-- #endregion Jssor Slider End -->
    </body>
