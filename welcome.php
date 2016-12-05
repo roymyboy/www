@@ -13,7 +13,8 @@
 </head>
 		<div id = "bg">	
 			<img src="image/bg0.jpg" class="stretch" alt =""/>
-<div class="container">		</div>
+		</div>
+<div class="container">	
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:helvetica, arial, verdana, sans-serif">
 
     <!-- #region Jssor Slider Begin -->
