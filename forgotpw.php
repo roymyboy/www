@@ -2,7 +2,6 @@
 session_start();
 include "connect.php";
 $to = "cannot send email"; 
-}
 ?>
 <html>
 	<head>
