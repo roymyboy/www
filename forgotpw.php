@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "connect.php";
-$to = "cannot send email"; 
 ?>
 <html>
 	<head>
@@ -24,7 +23,6 @@ $to = "cannot send email";
 			</div>
 				<button id="bgcolor" type="submit" name="submit"  value="Forgotw">Submit</button>
 		</fieldset>
-			<span type="text-danger"><?php if(isset($to)) echo $to ;?></span>
 			<p id="p-color">Already Registered? <a id="a-color"  href="index.php">login here</a></p>
 			<p id="p-color">New User? <a id="a-color" href="register.php">create new account</a></p>
 		</form>
