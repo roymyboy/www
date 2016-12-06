@@ -41,6 +41,7 @@ if (isset($_POST['signup'])) {
     }
     if (!$error) {
         if(mysqli_query($con, "INSERT INTO users(name,email,password) VALUES('" . $name . "', '" . $email . "', '" . md5($password) . "')")) {
+		header("Location:index.php");
             $successmsg = "Successfully Registered! <a id='a-color' href='index.php'>Click here to Login</a>";
 	 } else {
             $errormsg = "Error in registering...Please try again later!";
