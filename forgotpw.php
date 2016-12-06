@@ -1,13 +1,7 @@
 <?php
 session_start();
 include "connect.php";
-if (isset($_POST['email'])){
-	$email = $_POST['email'];
-	$query="SELECT `email` FROM `users` WHERE email='$email'";
-	$result   = mysqli_query($con, $query) or die(mysqli_error($con));
-	$count=mysqli_num_rows($result);
-	// If the count is equal to one, we will send message other wise display an error message.
-	$to = "cannot send email"; 
+$to = "cannot send email"; 
 }
 ?>
 <html>
